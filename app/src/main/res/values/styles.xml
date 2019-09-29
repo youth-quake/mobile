@@ -8,4 +8,23 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="btnRoxo" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">@drawable/btn_roxo_forma</item>
+    </style>
+
+    <style name="btnBranco" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:background">@drawable/btn_branco_forma</item>
+    </style>
+
+    <style name="font" >
+        <item name="android:width">250dp</item>
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
 </resources>
