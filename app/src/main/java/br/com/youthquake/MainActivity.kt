@@ -1,16 +1,9 @@
 package br.com.youthquake
-
-import android.app.Service
-import android.content.ServiceConnection
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.youthquake.config.ConfigRetrofit
 import br.com.youthquake.data.User
-import br.com.youthquake.service.UserService
-import kotlinx.android.synthetic.main.sign_in.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 

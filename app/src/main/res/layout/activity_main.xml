@@ -7,22 +7,98 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            android:src="@mipmap/rectangle"
+    />
+
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
+            android:text="Cadastro"
+            app:layout_constraintBottom_toTopOf="@+id/etNome"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginBottom="50dp"
+            android:layout_marginRight="200dp"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            />
+
+    <EditText
+            android:layout_width="268dp"
+            android:layout_height="wrap_content"
+            android:hint="Nome"
+            android:id="@+id/etNome"
+            android:layout_marginTop="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            android:inputType="text"
+            />
 
-    <fragment
-            android:name="br.com.youthquake.fragments.Button"
-            android:layout_width="200px"
-            android:layout_height="35px"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="110dp"
-            tools:layout_editor_absoluteX="40dp"
+    <EditText
+            android:layout_width="268dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/etNome"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:hint="Username"
+            android:id="@+id/etUsername"
+            android:inputType="text"
+            />
 
-    />
+    <EditText
+            android:layout_width="268dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/etUsername"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:hint="E-mail"
+            android:id="@+id/etEmail"
+            android:inputType="textEmailAddress"
+            />
+
+    <EditText
+            android:layout_width="268dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/etEmail"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:hint="Confirme o e-mail"
+            android:id="@+id/etConfirmEmail"
+            android:inputType="textEmailAddress"
+            />
+
+    <EditText
+            android:layout_width="268dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/etConfirmEmail"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:hint="Senha"
+            android:id="@+id/etSenha"
+            android:inputType="textPassword"
+            />
+
+    <Button
+            android:layout_width="237dp"
+            android:layout_height="wrap_content"
+            android:text="Cadastrar"
+            android:textColor="@android:color/white"
+            style="@style/btnRoxo"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:topLeftRadius="10dp"
+            android:topRightRadius="10dp"
+            android:id="@+id/btCadastrar"
+            app:layout_constraintTop_toBottomOf="@id/etSenha"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="10dp"
+            />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
