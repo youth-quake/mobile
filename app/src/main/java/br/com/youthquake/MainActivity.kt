@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        /*
         btCadastrar.setOnClickListener {
             val usr = User()
             usr.name = etNome.text.toString()
@@ -20,5 +21,6 @@ class MainActivity : AppCompatActivity() {
             val call = ConfigRetrofit().userInclude().insertUser(usr)
             call.execute()
         }
+        */
     }
 }

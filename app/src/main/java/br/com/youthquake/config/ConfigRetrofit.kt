@@ -13,7 +13,6 @@ class ConfigRetrofit {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
-
     fun userInclude():UserService{
         return retrofit.create(UserService::class.java)
     }
