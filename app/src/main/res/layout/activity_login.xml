@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@mipmap/retangle"
-        tools:context=".MainActivity"
+        tools:context=".Login"
         >
 
     <ImageView
@@ -17,8 +18,8 @@
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cadastro"
-            app:layout_constraintBottom_toTopOf="@+id/etNome"
+            android:text="Entrar"
+            app:layout_constraintBottom_toTopOf="@+id/etUsername"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             android:layout_marginBottom="50dp"
@@ -26,13 +27,13 @@
             android:textSize="30sp"
             android:textStyle="bold"
             android:textColor="@color/colorPrimary"
-    />
+            />
 
     <EditText
             android:layout_width="268dp"
             android:layout_height="wrap_content"
-            android:hint="Nome"
-            android:id="@+id/etNome"
+            android:hint="E-mail ou username"
+            android:id="@+id/etUsername"
             android:layout_marginTop="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -44,62 +45,32 @@
     <EditText
             android:layout_width="268dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/etNome"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:hint="Username"
-            android:id="@+id/etUsername"
-            android:inputType="text"
-            />
-
-    <EditText
-            android:layout_width="268dp"
-            android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/etUsername"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:hint="E-mail"
-            android:id="@+id/etEmail"
-            android:inputType="textEmailAddress"
-            />
-
-    <EditText
-            android:layout_width="268dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/etEmail"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:hint="Confirme seu e-mail"
-            android:id="@+id/etConfirmEmail"
-            android:inputType="textEmailAddress"
-            />
-
-    <EditText
-            android:layout_width="268dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/etConfirmEmail"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
             android:hint="Senha"
-            android:id="@+id/etSenha"
+            android:id="@+id/etPassword"
             android:inputType="textPassword"
             />
 
     <Button
             android:layout_width="237dp"
             android:layout_height="wrap_content"
-            android:text="Cadastrar"
+            android:text="Entrar"
             android:textColor="@android:color/white"
             style="@style/btnRoxo"
             android:textSize="15sp"
             android:textStyle="bold"
             android:topLeftRadius="10dp"
             android:topRightRadius="10dp"
-            android:id="@+id/btCadastrar"
-            app:layout_constraintTop_toBottomOf="@id/etSenha"
+            android:id="@+id/btLogar"
+            app:layout_constraintTop_toBottomOf="@id/etPassword"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
