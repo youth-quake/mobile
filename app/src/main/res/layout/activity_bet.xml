@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteTheme"
+    tools:context=".Bet">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@mipmap/arrowback_dark"
+        tools:ignore="MissingConstraints"
+        android:id="@+id/arrowBack"
+        />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:text="@string/titleBet"
+        style="@style/titleBetMovements"
+        app:layout_constraintTop_toBottomOf="@id/arrowBack"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:id="@+id/tvTitle"
+    />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/labelsInputs"
+        android:text="@string/labelTypeBet"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:id="@+id/lbTypeBet"
+    />
+
+    <EditText
+        style="@style/editTextBetAndMoviments"
+        app:layout_constraintTop_toBottomOf="@id/lbTypeBet"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:hint="Objetivo principal da aposta"
+        android:id="@+id/edTypeBet"
+    />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/labelsInputs"
+        android:text="@string/labelValueBet"
+        app:layout_constraintTop_toBottomOf="@id/edTypeBet"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:id="@+id/lbValueBet"
+    />
+
+    <EditText
+        style="@style/editTextBetAndMoviments"
+        app:layout_constraintTop_toBottomOf="@id/lbValueBet"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:hint="Quantia apostada"
+        android:id="@+id/edValueBet"
+    />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/labelsInputs"
+        android:text="@string/labelDateBet"
+        app:layout_constraintTop_toBottomOf="@id/edValueBet"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:id="@+id/lbDateBet"
+    />
+
+    <EditText
+        style="@style/editTextBetAndMoviments"
+        app:layout_constraintTop_toBottomOf="@id/lbDateBet"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:hint="Data até o fim da aposta"
+        android:inputType="date"
+        android:id="@+id/edDateBet"
+    />
+
+    <Button
+        android:layout_width="237dp"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonBetText"
+        style="@style/buttonBetAndMoviments"
+        android:id="@+id/btBet"
+        app:layout_constraintTop_toBottomOf="@id/edDateBet"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

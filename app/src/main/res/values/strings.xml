@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">youthquake</string>
+
+    <!--Apostas-->
+    <string name="titleBet">Você manda! Diga quais serão as regras da aposta:</string>
+    <string name="labelTypeBet">Defina um objetivo da aposta!</string>
+    <string name="labelValueBet">Valor apostado:</string>
+    <string name="labelDateBet">Defina uma data pra aposta:</string>
+    <string name="buttonBetText">Apostar!</string>
+
+
 </resources>

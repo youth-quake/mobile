@@ -25,4 +25,44 @@
         <item name="android:textSize">20dp</item>
         <item name="android:textAlignment">center</item>
     </style>
+
+    <!--Apostas e Movimentações - Titulos-->
+    <style name="titleBetMovements">
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textSize">25dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:paddingBottom">30dp</item>
+    </style>
+
+    <!--Apostas e Movimentações - Labels-->
+    <style name="labelsInputs">
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+
+    <!--Apostas e Movimentações - EditText's-->
+    <style name="editTextBetAndMoviments">
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:layout_width">268dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!--Apostas e Movimentações - Button-->
+    <style name="buttonBetAndMoviments">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:topLeftRadius">10dp</item>
+        <item name="android:topRightRadius">10dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">@drawable/btn_roxo_forma</item>
+    </style>
+
 </resources>
