@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/whiteTheme"
-    tools:context=".Bet">
+    tools:context=".Movements">
 
     <ImageView
         android:id="@+id/arrowBack"
@@ -17,7 +17,7 @@
 
     <TextView
         android:layout_height="wrap_content"
-        android:text="@string/titleBet"
+        android:text="@string/titleMovements"
         style="@style/titleBetMovements"
         app:layout_constraintTop_toBottomOf="@id/arrowBack"
         app:layout_constraintRight_toLeftOf="parent"
@@ -29,72 +29,73 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/labelsInputs"
-        android:text="@string/labelTypeBet"
+        android:text="@string/labelTypeMovements"
         app:layout_constraintTop_toBottomOf="@id/tvTitle"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
-        android:id="@+id/lbTypeBet"
+        android:id="@+id/lbTypeMovements"
     />
 
     <EditText
         style="@style/editTextBetAndMoviments"
-        app:layout_constraintTop_toBottomOf="@id/lbTypeBet"
+        app:layout_constraintTop_toBottomOf="@id/lbTypeMovements"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
-        android:hint="Objetivo principal da aposta"
-        android:id="@+id/edTypeBet"
+        android:hint="Economia, gastos, investimentos"
+        android:id="@+id/edTypeMovements"
     />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/labelsInputs"
-        android:text="@string/labelValueBet"
-        app:layout_constraintTop_toBottomOf="@id/edTypeBet"
+        android:text="@string/labelValueMovements"
+        app:layout_constraintTop_toBottomOf="@id/edTypeMovements"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
-        android:id="@+id/lbValueBet"
+        android:id="@+id/lbValueMovements"
     />
 
     <EditText
         style="@style/editTextBetAndMoviments"
-        app:layout_constraintTop_toBottomOf="@id/lbValueBet"
+        app:layout_constraintTop_toBottomOf="@id/lbValueMovements"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
-        android:hint="Quantia apostada"
-        android:id="@+id/edValueBet"
+        android:inputType="number"
+        android:hint="Quantia"
+        android:id="@+id/edValueMovements"
     />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/labelsInputs"
-        android:text="@string/labelDateBet"
-        app:layout_constraintTop_toBottomOf="@id/edValueBet"
+        android:text="@string/labelDateMovements"
+        app:layout_constraintTop_toBottomOf="@id/edValueMovements"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
-        android:id="@+id/lbDateBet"
+        android:id="@+id/lbDateMovements"
     />
 
     <EditText
         style="@style/editTextBetAndMoviments"
-        app:layout_constraintTop_toBottomOf="@id/lbDateBet"
+        app:layout_constraintTop_toBottomOf="@id/lbDateMovements"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
-        android:hint="Data até o fim da aposta"
         android:inputType="date"
-        android:id="@+id/edDateBet"
+        android:hint="Data da transação"
+        android:id="@+id/edDateMovements"
     />
 
     <Button
         android:layout_width="237dp"
         android:layout_height="wrap_content"
-        android:text="@string/buttonBetText"
+        android:text="@string/buttonMovementsText"
         style="@style/buttonBetAndMoviments"
         android:id="@+id/btBet"
-        app:layout_constraintTop_toBottomOf="@id/edDateBet"
+        app:layout_constraintTop_toBottomOf="@id/edDateMovements"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
     />
-
+    
 </androidx.constraintlayout.widget.ConstraintLayout>
