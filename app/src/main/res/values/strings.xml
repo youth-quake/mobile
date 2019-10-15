@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">youthquake</string>
 
+    <!--Main-->
+    <string name="titleMain">Revolucione no mercado financeiro</string>
+    <string name="buttonCreate">Criar conta</string>
+    <string name="buttonLogin">Entrar</string>
+
     <!--Apostas-->
     <string name="titleBet">Você manda! Diga quais serão as regras da aposta:</string>
     <string name="labelTypeBet">Defina um objetivo da aposta!</string>
@@ -9,8 +14,7 @@
     <string name="buttonBetText">Apostar!</string>
 
     <!--Movimentações-->
-    <string name="titleMovements">Aqui você poderá registrar todas as suas atividades financeiras,
-        seja uma economia, um gasto...</string>
+    <string name="titleMovements">Aqui você poderá registrar todas as suas atividades financeiras, seja uma economia, um gasto...</string>
     <string name="labelTypeMovements">Defina o tipo da movimentação</string>
     <string name="labelValueMovements">E quanto foi?</string>
     <string name="labelDateMovements">Data da transação:</string>
