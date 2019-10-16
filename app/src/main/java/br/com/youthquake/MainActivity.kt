@@ -14,8 +14,11 @@ class MainActivity : AppCompatActivity() {
 
         btCriarConta.setOnClickListener {
             val register = Intent(this, Register::class.java)
-            register.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(register)
+        }
+        btEntrar.setOnClickListener {
+            val login = Intent(this, Login::class.java)
+            startActivity(login)
         }
     }
 }

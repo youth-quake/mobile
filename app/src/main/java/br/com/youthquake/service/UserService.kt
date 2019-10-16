@@ -10,4 +10,6 @@ interface UserService {
     @POST("user/include")
     fun insertUser(@Body user: User): Call<User>
 
+    @POST("login")
+    fun loginUser(@Body user: User): Call<User>
 }

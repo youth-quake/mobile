@@ -68,4 +68,38 @@ class User {
         set(value) {
             field = value
         }
+
+    @SerializedName("movements")
+    @Expose
+    var movements: List<Movements>? = null
+        get() = field
+        set(value) {
+            field = value
+        }
+
+    @SerializedName("target")
+    @Expose
+    var target: List<Target>? = null
+        get() = field
+        set(value) {
+            field = value
+        }
+
+    @SerializedName("achievementUsers")
+    @Expose
+    var achievementUsers: List<AchievementUser>? = null
+        get() = field
+        set(value) {
+            field = value
+        }
+
+    @SerializedName("actionUsers")
+    @Expose
+    var actionUsers: List<ActionUser>? = null
+        get() = field
+        set(value) {
+            field = value
+        }
+
+
 }

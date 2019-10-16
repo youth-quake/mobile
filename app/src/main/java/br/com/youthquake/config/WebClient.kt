@@ -15,4 +15,8 @@ class WebClient {
     fun includeUserService(): UserService{
         return retrofit.create(UserService::class.java)
     }
+
+    fun authenticLoginUser(): UserService{
+        return retrofit.create(UserService::class.java)
+    }
 }

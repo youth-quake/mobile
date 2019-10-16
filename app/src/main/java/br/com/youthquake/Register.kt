@@ -19,7 +19,7 @@ class Register : AppCompatActivity() {
         setContentView(R.layout.activity_register)
     }
 
-    fun includeUser(v:View){
+    fun includeUser(view:View){
         val user = User()
         user.name = etNome.text.toString()
         user.login = etUsername.text.toString()
