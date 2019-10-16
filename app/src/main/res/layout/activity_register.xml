@@ -96,6 +96,7 @@
         android:topLeftRadius="10dp"
         android:topRightRadius="10dp"
         android:id="@+id/btCadastrar"
+        android:onClick="includeUser"
         app:layout_constraintTop_toBottomOf="@id/etSenha"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
