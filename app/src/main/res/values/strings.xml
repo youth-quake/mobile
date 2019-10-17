@@ -20,4 +20,8 @@
     <string name="labelDateMovements">Data da transação:</string>
     <string name="buttonMovementsText">Registrar</string>
 
+    <!--Home-->
+    <string name="welcome">Bem vindo(a) ao Youthquake</string>
+    <string name="level">Nível</string>
+
 </resources>

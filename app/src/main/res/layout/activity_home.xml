@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".Home">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@mipmap/arrowback"
+        tools:ignore="MissingConstraints"
+        android:id="@+id/imgArrow"
+    />
+
+    <TextView
+        android:layout_height="wrap_content"
+        style="@style/titleBetMovements"
+        android:textColor="@color/whiteTheme"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgArrow"
+        android:text="@string/welcome"
+        android:id="@+id/lbWelcome"
+    />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/lbWelcome"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        style="@style/titleHome"
+        android:textColor="@color/whiteTheme"
+        android:textStyle="bold"
+        android:id="@+id/name"
+    />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:text="@string/level"
+        style="@style/infoHome"
+        android:textColor="@color/whiteTheme"
+        android:id="@+id/lbLevel"
+        android:layout_marginRight="20dp"
+    />
+
+    <TextView
+        style="@style/infoHome"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        app:layout_constraintLeft_toRightOf="@id/lbLevel"
+        android:textColor="@color/whiteTheme"
+        android:layout_marginLeft="5dp"
+        android:id="@+id/level"
+    />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

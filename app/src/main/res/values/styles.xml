@@ -26,6 +26,19 @@
         <item name="android:textAlignment">center</item>
     </style>
 
+    <style name="titleHome">
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textSize">25dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_width">300dp</item>
+    </style>
+
+    <style name="infoHome">
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
     <!--Apostas e Movimentações - Titulos-->
     <style name="titleBetMovements">
         <item name="android:fontFamily">Roboto</item>
@@ -35,6 +48,8 @@
         <item name="android:layout_marginTop">30dp</item>
         <item name="android:paddingBottom">30dp</item>
     </style>
+
+
 
     <!--Apostas e Movimentações - Labels-->
     <style name="labelsInputs">
