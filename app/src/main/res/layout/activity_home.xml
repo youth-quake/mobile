@@ -12,16 +12,16 @@
         android:layout_height="40dp"
         android:src="@mipmap/arrowback"
         tools:ignore="MissingConstraints"
-        android:id="@+id/imgArrow"
+        android:id="@+id/imgArrowHome"
     />
 
     <TextView
         android:layout_height="wrap_content"
-        style="@style/titleBetMovements"
+        style="@style/titleHome"
         android:textColor="@color/whiteTheme"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgArrow"
+        app:layout_constraintTop_toBottomOf="@id/imgArrowHome"
         android:text="@string/welcome"
         android:id="@+id/lbWelcome"
     />

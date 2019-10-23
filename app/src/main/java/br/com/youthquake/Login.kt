@@ -34,12 +34,10 @@ class Login : AppCompatActivity() {
                         enableAccess(responseServer.idUser,responseServer.name,responseServer.login,
                             responseServer.email, responseServer.password, responseServer.messageStatus,
                             responseServer.level)
-                    }else{
-                        rejectAccess()
+                        }
                     }
                 }
-            }
-            override fun onFailure(call: Call<User?>?, t: Throwable?) {
+                override fun onFailure(call: Call<User?>?, t: Throwable?) {
                 Log.e("onFailure error", t?.message)
             }
         })
@@ -47,7 +45,7 @@ class Login : AppCompatActivity() {
 
     fun enableAccess(idUser:Long?,name:String?,login:String?,email:String?,password:String?,
                     messageStatus:String?,level:Int?){
-        val goHome = Intent(this, Home::class.java)
+        val goHome = Intent(this, Firststep::class.java)
         goHome.putExtra("idUser", idUser)
         goHome.putExtra("name",  name)
         goHome.putExtra("login", login)

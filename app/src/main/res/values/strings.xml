@@ -24,4 +24,14 @@
     <string name="welcome">Bem vindo(a) ao Youthquake</string>
     <string name="level">Nível</string>
 
+    <!--Steps-->
+    <string name="buttonUnderstand">Entendi!</string>
+    <string name="titleStep1">Olá, %1$s! Controle seus gastos</string>
+    <string name="subTitleStep1">Registre seus gastos e economias para melhor controle</string>
+    <string name="titleStep2">Interaja com amigos</string>
+    <string name="subTitleStep2">Faça apostas e compartilhe conhecimento com amigos!</string>
+    <string name="titleStep3">Aprenda bastante!</string>
+    <string name="subTitleStep3">Estude sobre financeiro nos conteúdos no nosso fórum</string>
+
+
 </resources>
