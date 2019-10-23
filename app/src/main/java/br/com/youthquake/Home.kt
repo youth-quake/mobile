@@ -11,7 +11,7 @@ class Home : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        imgArrow.setOnClickListener {
+        imgArrowHome.setOnClickListener {
             val backMain = Intent(this, MainActivity::class.java)
             startActivity(backMain)
         }

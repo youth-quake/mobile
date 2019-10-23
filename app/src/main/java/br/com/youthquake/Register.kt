@@ -2,6 +2,7 @@ package br.com.youthquake
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Message
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -31,11 +32,17 @@ class Register : AppCompatActivity() {
             override fun onResponse(call: Call<User?>?, response: Response<User?>?) {
                 response?.let {
                     val responseServer = it.body()
+                    if(responseServer != null){
+
+                    }
                 }
             }
             override fun onFailure(call: Call<User?>?, t: Throwable?) {
                 Log.e("onFailure error", t?.message)
             }
         })
+    }
+    fun toastResponse(message:String){
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 }

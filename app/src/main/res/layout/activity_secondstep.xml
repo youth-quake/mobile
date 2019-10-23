@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".Secondstep">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@mipmap/arrowback"
+        tools:ignore="MissingConstraints"
+        android:id="@+id/imgArrowStep2"
+    />
+
+    <TextView
+        android:layout_height="wrap_content"
+        style="@style/titleSteps"
+        android:textColor="@color/whiteTheme"
+        android:textStyle="bold"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgArrowStep2"
+        android:text="@string/titleStep2"
+        android:id="@+id/lbTitleStep2"
+    />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@mipmap/friends"
+        app:layout_constraintTop_toBottomOf="@id/lbTitleStep2"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:id="@+id/imgFriends"
+    />
+
+    <TextView
+        android:layout_height="wrap_content"
+        style="@style/subtitleSteps"
+        android:textColor="@color/whiteTheme"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgFriends"
+        android:text="@string/subTitleStep2"
+        android:id="@+id/lbSubTitleStep2"
+    />
+
+    <Button
+        android:id="@+id/undersTwo"
+        style="@style/btnBranco"
+        android:layout_width="250dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/lbSubTitleStep2"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        android:text="@string/buttonUnderstand"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

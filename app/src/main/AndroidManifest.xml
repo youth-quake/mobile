@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Home"></activity>
+        <activity android:name=".Thirtstep"></activity>
+        <activity android:name=".Secondstep" />
+        <activity android:name=".Firststep" />
+        <activity android:name=".Home" />
         <activity android:name=".Movements" />
         <activity android:name=".Bet" />
         <activity android:name=".Login" />
