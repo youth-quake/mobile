@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Main-->
+    <string name="titleMain">Revolutionize in the financial market</string>
+    <string name="buttonCreate">Create an account</string>
+    <string name="buttonLogin">Log in</string>
+
+    <!--Apostas-->
+    <string name="titleBet">You send it! Tell us what the rules of the bet will be:</string>
+    <string name="labelTypeBet">Set a betting goal!</string>
+    <string name="labelValueBet">Bet Value:</string>
+    <string name="labelDateBet">Set a bet date:</string>
+    <string name="buttonBetText">To bet!</string>
+
+    <!--Movimentações-->
+    <string name="titleMovements">Here you can record all your financial activities, be it an economy, an expense ...</string>
+    <string name="labelTypeMovements">Set Drive Type</string>
+    <string name="labelValueMovements">And how much was it?</string>
+    <string name="labelDateMovements">Transaction Date:</string>
+    <string name="buttonMovementsText">Register</string>
+
+    <!--Home-->
+    <string name="welcome">Welcome to Youthquake</string>
+    <string name="level">Level</string>
+
+    <!--Steps-->
+    <string name="buttonUnderstand">Understand!</string>
+    <string name="titleStep1">Hello, %1$s! Control your expenses</string>
+    <string name="subTitleStep1">Record your expenses and savings for better control.</string>
+    <string name="titleStep2">Interact with friends</string>
+    <string name="subTitleStep2">Place bets and share knowledge with friends!</string>
+    <string name="titleStep3">Learn a lot!</string>
+    <string name="subTitleStep3">Study financial content in our forum</string>
+
+    <!--Login-->
+    <string name="signin">Sign-in</string>
+    <string name="passwordInput">Password</string>
+    <string name="inputUsername">Email or username</string>
+
+    <!--Cadastro-->
+    <string name="register">Register</string>
+    <string name="nameInput">Name</string>
+    <string name="confirmEmail">Confirm your email</string>
+
+
+</resources>

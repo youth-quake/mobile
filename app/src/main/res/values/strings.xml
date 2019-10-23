@@ -33,5 +33,14 @@
     <string name="titleStep3">Aprenda bastante!</string>
     <string name="subTitleStep3">Estude sobre financeiro nos conteúdos no nosso fórum</string>
 
+    <!--Login-->
+    <string name="signin">Entrar</string>
+    <string name="inputUsername">E-mail ou username</string>
+    <string name="passwordInput">Senha</string>
+
+    <!--Cadastro-->
+    <string name="register">Cadastrar</string>
+    <string name="nameInput">Nome</string>
+    <string name="confirmEmail">Confirme seu e-mail</string>
 
 </resources>

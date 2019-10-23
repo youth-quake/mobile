@@ -18,7 +18,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Entrar"
+        android:text="@string/signin"
         app:layout_constraintBottom_toTopOf="@+id/etUsername"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -32,7 +32,7 @@
     <EditText
         android:layout_width="268dp"
         android:layout_height="wrap_content"
-        android:hint="E-mail ou username"
+        android:hint="@string/inputUsername"
         android:id="@+id/etUsername"
         android:layout_marginTop="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,7 +48,7 @@
         app:layout_constraintTop_toBottomOf="@id/etUsername"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:hint="Senha"
+        android:hint="@string/passwordInput"
         android:id="@+id/etPassword"
         android:inputType="textPassword"
         />
@@ -56,7 +56,7 @@
     <Button
         android:layout_width="237dp"
         android:layout_height="wrap_content"
-        android:text="Entrar"
+        android:text="@string/signin"
         android:textColor="@android:color/white"
         style="@style/btnRoxo"
         android:onClick="authenticAcessUser"
