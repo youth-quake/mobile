@@ -17,7 +17,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cadastro"
+        android:text="@string/register"
         app:layout_constraintBottom_toTopOf="@+id/etNome"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -31,7 +31,7 @@
     <EditText
         android:layout_width="268dp"
         android:layout_height="wrap_content"
-        android:hint="Nome"
+        android:hint="@string/nameInput"
         android:id="@+id/etNome"
         android:layout_marginTop="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,7 +69,7 @@
         app:layout_constraintTop_toBottomOf="@id/etEmail"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:hint="Confirme seu e-mail"
+        android:hint="@string/confirmEmail"
         android:id="@+id/etConfirmEmail"
         android:inputType="textEmailAddress"
         />
@@ -80,7 +80,7 @@
         app:layout_constraintTop_toBottomOf="@id/etConfirmEmail"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:hint="Senha"
+        android:hint="@string/passwordInput"
         android:id="@+id/etSenha"
         android:inputType="textPassword"
         />
@@ -88,7 +88,7 @@
     <Button
         android:layout_width="237dp"
         android:layout_height="wrap_content"
-        android:text="Cadastrar"
+        android:text="@string/register"
         android:textColor="@android:color/white"
         style="@style/btnRoxo"
         android:topLeftRadius="10dp"
