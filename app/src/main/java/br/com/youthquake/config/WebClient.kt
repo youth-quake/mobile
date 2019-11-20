@@ -8,7 +8,7 @@ import retrofit2.converter.jackson.JacksonConverterFactory
 class WebClient {
 
     private val retrofit = Retrofit.Builder()
-            .baseUrl("https://webserviceyouthquake.azurewebsites.net/")
+            .baseUrl("http://52.202.202.227:8081/")
             .addConverterFactory(JacksonConverterFactory.create())
             .build()
 

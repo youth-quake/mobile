@@ -8,59 +8,147 @@
     tools:context=".Home">
 
     <ImageView
+        android:id="@+id/imgArrowHome"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@mipmap/arrowback"
-        tools:ignore="MissingConstraints"
-        android:id="@+id/imgArrowHome"
-    />
+        tools:ignore="MissingConstraints" />
 
-    <TextView
-        android:layout_height="wrap_content"
-        style="@style/titleHome"
-        android:textColor="@color/whiteTheme"
-        app:layout_constraintRight_toLeftOf="parent"
+    <ImageView
+        android:id="@+id/imgPerfil"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/whiteTheme"
         app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgArrowHome"
-        android:text="@string/welcome"
-        android:id="@+id/lbWelcome"
-    />
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgArrowHome" />
 
     <TextView
-        android:layout_height="wrap_content"
+        android:id="@+id/name"
+        style="@style/titleHome"
         android:layout_width="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/lbWelcome"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintRight_toLeftOf="parent"
-        style="@style/titleHome"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Teste"
         android:textColor="@color/whiteTheme"
         android:textStyle="bold"
-        android:id="@+id/name"
-    />
-
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/name"
-        app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
-        android:text="@string/level"
-        style="@style/infoHome"
-        android:textColor="@color/whiteTheme"
-        android:id="@+id/lbLevel"
-        android:layout_marginRight="20dp"
-    />
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgPerfil" />
+
 
     <TextView
-        style="@style/infoHome"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/name"
-        app:layout_constraintLeft_toRightOf="@id/lbLevel"
-        android:textColor="@color/whiteTheme"
-        android:layout_marginLeft="5dp"
         android:id="@+id/level"
-    />
+        style="@style/infoHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:text="teste"
+        android:textColor="@color/whiteTheme"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMinhasApostas"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/top_border_white"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/level">
+
+        <TextView
+            android:id="@+id/txtMinhasApostas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Minhas Apostas"
+            android:textColor="@color/whiteTheme" />
+
+        <ImageView
+            android:id="@+id/imgArrowApostas"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/arrowback"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMeusAmigos"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_border_white"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clMinhasApostas">
+
+        <TextView
+            android:id="@+id/txtMeusAmigos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Meus Amigos"
+            android:textColor="@color/whiteTheme" />
+
+        <ImageView
+            android:id="@+id/imgArrowAmigos"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/arrowback"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clEconomias"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_border_white"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clMeusAmigos">
+
+        <TextView
+            android:id="@+id/txtEconomias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Minhas Economias"
+            android:textColor="@color/whiteTheme" />
+
+        <ImageView
+            android:id="@+id/imgArrowEconomias"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/arrowback"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clConquistas"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_border_white"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clEconomias">
+
+        <TextView
+            android:id="@+id/txtConquistas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Minhas Conquistas"
+            android:textColor="@color/whiteTheme" />
+
+        <ImageView
+            android:id="@+id/imgArrowConquistas"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/arrowback"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
