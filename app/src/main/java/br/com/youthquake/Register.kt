@@ -7,9 +7,6 @@ import android.widget.Toast
 import br.com.youthquake.config.UserInclude
 import br.com.youthquake.model.User
 import kotlinx.android.synthetic.main.activity_register.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class Register : AppCompatActivity() {
 

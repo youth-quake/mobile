@@ -8,9 +8,6 @@ import android.widget.Toast
 import br.com.youthquake.config.UserAuthenticate
 import br.com.youthquake.model.User
 import kotlinx.android.synthetic.main.activity_login.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class Login : AppCompatActivity() {
 
