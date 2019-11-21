@@ -1,15 +1,15 @@
 package br.com.youthquake.service
-
 import br.com.youthquake.model.User
-import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.POST
+import feign.Headers
+import feign.RequestLine
 
 interface UserService {
 
-    @POST("user/include")
-    fun insertUser(@Body user: User): Call<User>
+    @RequestLine("POST user/include")
+    @Headers("Content-Type: application/json")
+    fun insertUser(user: User): User?
 
-    @POST("login")
-    fun loginUser(@Body user: User): Call<User>
+    @RequestLine("POST login")
+    @Headers("Content-Type: application/json")
+    fun loginUser(user: User): User?
 }
