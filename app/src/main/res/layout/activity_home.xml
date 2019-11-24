@@ -9,17 +9,18 @@
 
     <ImageView
         android:id="@+id/imgArrowHome"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:paddingTop="10dp"
         android:src="@mipmap/arrowback"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imgPerfil"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_marginTop="50dp"
-        android:background="@color/whiteTheme"
+        android:src="@mipmap/chick"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imgArrowHome" />
@@ -30,13 +31,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Teste"
+        android:text="Giuliana"
         android:textColor="@color/whiteTheme"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imgPerfil" />
-
 
     <TextView
         android:id="@+id/level"
@@ -45,15 +45,14 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
-        android:text="teste"
+        android:text="Nível 20"
         android:textColor="@color/whiteTheme"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/name" />
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/clMinhasApostas"
+        android:id="@+id/clQuiz"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -63,18 +62,19 @@
         app:layout_constraintTop_toBottomOf="@id/level">
 
         <TextView
-            android:id="@+id/txtMinhasApostas"
+            android:id="@+id/txtQuiz"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:text="Minhas Apostas"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:text="Quiz"
             android:textColor="@color/whiteTheme" />
 
         <ImageView
             android:id="@+id/imgArrowApostas"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@mipmap/arrowback"
+            android:src="@mipmap/arrow_right"
             app:layout_constraintRight_toRightOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -85,12 +85,14 @@
         android:background="@drawable/top_border_white"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/clMinhasApostas">
+        app:layout_constraintTop_toBottomOf="@id/clQuiz">
 
         <TextView
             android:id="@+id/txtMeusAmigos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textStyle="bold"
             android:text="Meus Amigos"
             android:textColor="@color/whiteTheme" />
 
@@ -98,12 +100,12 @@
             android:id="@+id/imgArrowAmigos"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@mipmap/arrowback"
+            android:src="@mipmap/arrow_right"
             app:layout_constraintRight_toRightOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/clEconomias"
+        android:id="@+id/clSair"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:background="@drawable/top_border_white"
@@ -112,43 +114,22 @@
         app:layout_constraintTop_toBottomOf="@id/clMeusAmigos">
 
         <TextView
-            android:id="@+id/txtEconomias"
+            android:id="@+id/txtSair"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Minhas Economias"
+            android:text="Sair"
+            android:textSize="25dp"
+            android:textStyle="bold"
             android:textColor="@color/whiteTheme" />
 
         <ImageView
             android:id="@+id/imgArrowEconomias"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@mipmap/arrowback"
+            android:src="@mipmap/arrow_right"
             app:layout_constraintRight_toRightOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/clConquistas"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/top_border_white"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/clEconomias">
-
-        <TextView
-            android:id="@+id/txtConquistas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Minhas Conquistas"
-            android:textColor="@color/whiteTheme" />
-
-        <ImageView
-            android:id="@+id/imgArrowConquistas"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@mipmap/arrowback"
-            app:layout_constraintRight_toRightOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

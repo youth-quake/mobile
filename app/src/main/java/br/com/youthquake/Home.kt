@@ -11,13 +11,16 @@ class Home : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        imgArrowHome.setOnClickListener {
-            val backMain = Intent(this, MainActivity::class.java)
-            startActivity(backMain)
-        }
+        /*
+         imgArrowHome.setOnClickListener {
+              val backMain = Intent(this, MainActivity::class.java)
+              startActivity(backMain)
+          }
 
-        name.text = intent.getStringExtra("name")
-        level.text = intent.getIntExtra("level", 0).toString()
+          name.text = intent.getStringExtra("name")
+          level.text = intent.getIntExtra("level", 0).toString()
+
+         */
     }
 }
 
