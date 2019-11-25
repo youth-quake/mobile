@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.*
 import br.com.youthquake.config.FillQuestions
 import br.com.youthquake.model.Question
-import kotlinx.android.synthetic.main.activity_main_quizz.*
+import kotlinx.android.synthetic.main.activity_questions.*
 
 class Questions : AppCompatActivity() {
 
@@ -18,11 +18,9 @@ class Questions : AppCompatActivity() {
     private var score: Int = 0
     private var answer: Boolean = false
 
-    private val task = FillQuestions()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_quizz)
+        setContentView(R.layout.activity_questions)
 
         txtCountQuestions.text = "Questão $counter/$countTotal"
         currentQuestion = fillQuestion()
@@ -40,7 +38,18 @@ class Questions : AppCompatActivity() {
     }
 
     private fun fillQuestion(): Question? {
-        return Question(1, "2+2?", "1", "2", "3", "4","4")
+        val task = FillQuestions()
+        val modelQuestion:Question = task.execute(1).get()
+
+        return Question(
+            modelQuestion.idQuestion,
+            modelQuestion.question,
+            modelQuestion.firstOption,
+            modelQuestion.secondOption,
+            modelQuestion.thirdOption,
+            modelQuestion.fourthOption,
+            modelQuestion.rightAnswer
+        )
     }
 
     private fun showQuestion() {
@@ -51,10 +60,10 @@ class Questions : AppCompatActivity() {
             currentQuestion = fillQuestion()
 
             question.text = currentQuestion?.question
-            radioButton1.text = currentQuestion?.stOption
-            radioButton2.text = currentQuestion?.ndOption
-            radioButton3.text = currentQuestion?.rdOption
-            radioButton4.text = currentQuestion?.thOption
+            radioButton1.text = currentQuestion?.firstOption
+            radioButton2.text = currentQuestion?.secondOption
+            radioButton3.text = currentQuestion?.thirdOption
+            radioButton4.text = currentQuestion?.fourthOption
 
             counter++
             txtCountQuestions.text = "Questão: $counter/$countTotal"

@@ -13,7 +13,7 @@ class FillQuestions : AsyncTask<Int, Void, Question>() {
             .decoder(JacksonDecoder())
             .target(
                 FillQuestionsService::class.java,
-                "http://demo5706957.mockable.io/"
+                "http://52.202.202.227:8081/"
             )
 
         try {

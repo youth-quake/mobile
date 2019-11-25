@@ -25,6 +25,7 @@ class Firststep : AppCompatActivity() {
 
         imgArrowStep1.setOnClickListener {
             val backMain = Intent(this, MainActivity::class.java)
+            backMain.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(backMain)
         }
 
@@ -37,6 +38,7 @@ class Firststep : AppCompatActivity() {
             avancedSecondStep.putExtra("password", password)
             avancedSecondStep.putExtra("messageStatus", messageStatus)
             avancedSecondStep.putExtra("level", level)
+            avancedSecondStep.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(avancedSecondStep)
         }
     }

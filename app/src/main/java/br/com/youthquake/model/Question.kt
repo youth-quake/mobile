@@ -1,11 +1,11 @@
 package br.com.youthquake.model
 
 class Question(
-    val id: Int,
+    val idQuestion: Int,
     val question: String,
-    val stOption: String,
-    val ndOption: String,
-    val rdOption: String,
-    val thOption: String,
+    val firstOption: String,
+    val secondOption: String,
+    val thirdOption: String,
+    val fourthOption: String,
     val rightAnswer: String
 )

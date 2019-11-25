@@ -68,7 +68,8 @@
             android:textSize="25dp"
             android:textStyle="bold"
             android:text="Quiz"
-            android:textColor="@color/whiteTheme" />
+            android:textColor="@color/whiteTheme"
+            />
 
         <ImageView
             android:id="@+id/imgArrowApostas"
