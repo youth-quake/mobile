@@ -27,14 +27,15 @@ class FirstSteps : AppCompatActivity() {
                 1 -> {
                     img.setImageDrawable(getDrawable(R.mipmap.friends))
                     lbTitle.text = getString(R.string.titleStep2)
-                    lbSubTitle.text = getString(R.string.subTitleStep1)
+                    lbSubTitle.text = getString(R.string.subTitleStep2)
                 }
                 2 -> {
                     img.setImageDrawable(getDrawable(R.mipmap.openbook))
                     lbTitle.text = getString(R.string.titleStep3)
-                    lbSubTitle.text = getString(R.string.subTitleStep1)
+                    lbSubTitle.text = getString(R.string.subTitleStep3)
                     btNext.text = getString(R.string.buttonUnderstand)
-
+                }
+                3 -> {
                     val home = Intent(this, Home::class.java)
                     home.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
 

@@ -22,7 +22,7 @@
 
     <!--Home-->
     <string name="welcome">Bem vindo(a) ao Youthquake</string>
-    <string name="level">Nível</string>
+    <string name="levelUser">Nível %1$d</string>
 
     <!--Steps-->
     <string name="buttonUnderstand">Entendi!</string>

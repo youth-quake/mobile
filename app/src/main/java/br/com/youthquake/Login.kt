@@ -24,14 +24,14 @@ class Login : AppCompatActivity() {
         if(response != null){
             enableAccess(response.idUser,response.name,response.login,
                 response.email, response.password, response.messageStatus,
-                response.level)
+                response.level, response.picture)
         }else{
             rejectAccess()
         }
     }
 
     fun enableAccess(idUser:Long?,name:String?,login:String?,email:String?,password:String?,
-                    messageStatus:String?,level:Int?){
+                    messageStatus:String?,level:Int?, picture:String?){
         val goHome = Intent(this, FirstSteps::class.java)
         goHome.putExtra("idUser", idUser)
         goHome.putExtra("name",  name)
@@ -40,6 +40,7 @@ class Login : AppCompatActivity() {
         goHome.putExtra("password", password)
         goHome.putExtra("messageStatus", messageStatus)
         goHome.putExtra("level", level)
+        goHome.putExtra("picture", picture)
         startActivity(goHome)
     }
 
