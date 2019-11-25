@@ -41,4 +41,5 @@ dependencies {
     // lib feign
     implementation 'io.github.openfeign:feign-core:9.5.1'
     implementation 'io.github.openfeign:feign-jackson:9.5.1'
+    implementation 'io.github.openfeign:feign-gson:9.5.1'
 }

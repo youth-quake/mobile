@@ -13,9 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Friends">
-
-        </activity>
+        <activity android:name=".initial_quizz"></activity>
+        <activity android:name=".Friends"></activity>
         <activity android:name=".Thirtstep" />
         <activity android:name=".Secondstep" />
         <activity android:name=".Firststep" />
@@ -30,7 +29,7 @@
         <activity android:name=".Bet" />
         <activity android:name=".Login" />
         <activity android:name=".Register" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

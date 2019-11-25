@@ -98,4 +98,21 @@
         <item name="android:background">@drawable/btn_roxo_forma</item>
     </style>
 
+
+    <style name="fontQuestion" >
+        <item name="android:width">250dp</item>
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+    <style name="fontCountQuestion">
+        <item name="android:width">250dp</item>
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textSize">25dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
 </resources>
