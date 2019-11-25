@@ -116,7 +116,11 @@ class Questions : AppCompatActivity() {
             Toast.makeText(this, getString(R.string.pressBackToFinish), Toast.LENGTH_SHORT).show()
             lastBack = System.currentTimeMillis()
         }
-        else finishAffinity()
+        else {
+            val goHome = Intent(this, FirstSteps::class.java)
+            goHome.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(goHome)
+        }
     }
 }
 

@@ -53,21 +53,5 @@ class FirstSteps : AppCompatActivity() {
 
             step++
         }
-
-        imgArrow.setOnClickListener {
-            val backMain = Intent(this, MainActivity::class.java)
-            backMain.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            startActivity(backMain)
-        }
-    }
-
-    var lastBack:Long = 0L
-
-    override fun onBackPressed() {
-        if (System.currentTimeMillis() - lastBack > 2000) {
-            Toast.makeText(this, getString(R.string.pressBackToFinish), Toast.LENGTH_SHORT).show()
-            lastBack = System.currentTimeMillis()
-        }
-        else finishAffinity()
     }
 }

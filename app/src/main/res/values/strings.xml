@@ -38,11 +38,14 @@
     <string name="signin">Entrar</string>
     <string name="inputUsername">E-mail ou username</string>
     <string name="passwordInput">Senha</string>
+    <string name="rejectedAccess">Usuário/ou senha incorretos</string>
 
     <!--Cadastro-->
     <string name="register">Cadastrar</string>
     <string name="nameInput">Nome</string>
     <string name="confirmEmail">Confirme seu e-mail</string>
+    <string name="registeredSuccessfully">Cadastro finalizado com sucesso</string>
 
+    <!--Sair-->
     <string name="pressBackToFinish">Clique novamente para sair</string>
 </resources>

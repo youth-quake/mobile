@@ -7,24 +7,16 @@
     android:background="@color/colorPrimary"
     tools:context=".FirstSteps">
 
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@mipmap/arrowback"
-        tools:ignore="MissingConstraints"
-        android:id="@+id/imgArrow"
-    />
-
     <TextView
         android:layout_height="wrap_content"
         style="@style/titleSteps"
         android:textColor="@color/whiteTheme"
         android:textStyle="bold"
+        android:text="Olá Youth, controle seus gastos!"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgArrow"
         android:id="@+id/lbTitle"
-    />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:layout_width="150dp"
@@ -34,7 +26,7 @@
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
         android:id="@+id/img"
-    />
+        android:layout_marginTop="30dp" />
 
     <TextView
         android:layout_height="wrap_content"
@@ -45,7 +37,7 @@
         app:layout_constraintTop_toBottomOf="@id/img"
         android:text="@string/subTitleStep1"
         android:id="@+id/lbSubTitle"
-    />
+        android:layout_marginTop="30dp" />
 
     <Button
         android:id="@+id/btNext"

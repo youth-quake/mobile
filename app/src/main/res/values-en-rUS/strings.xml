@@ -37,12 +37,15 @@
     <string name="signin">Sign-in</string>
     <string name="passwordInput">Password</string>
     <string name="inputUsername">Email or username</string>
+    <string name="rejectedAccess">Invalid user or password</string>
 
     <!--Cadastro-->
     <string name="register">Register</string>
     <string name="nameInput">Name</string>
     <string name="confirmEmail">Confirm your email</string>
+    <string name="registeredSuccessfully">Cadastro finalizado com sucesso</string>
 
+    <!--Sair-->
     <string name="pressBackToFinish">Press back to finish</string>
 
 </resources>

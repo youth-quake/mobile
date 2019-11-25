@@ -13,20 +13,18 @@ class Register : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
-    }
 
-    fun includeUser(v:View) {
-        val user = User()
-        user.name = etNome.text.toString()
-        user.login = etUsername.text.toString()
-        user.password = etSenha.text.toString()
-        user.email = etEmail.text.toString()
+        btCadastrar.setOnClickListener{
+            val user = User()
+            user.name = etNome.text.toString()
+            user.login = etUsername.text.toString()
+            user.password = etSenha.text.toString()
+            user.email = etEmail.text.toString()
 
-        val call = UserInclude()
-        call.execute(user)
+            val call = UserInclude()
+            call.execute(user)
 
-        Toast.makeText(this,
-            "Cadastrado com sucesso!",
-            Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.registeredSuccessfully), Toast.LENGTH_SHORT).show()
+        }
     }
 }
