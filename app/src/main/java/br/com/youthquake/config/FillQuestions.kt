@@ -2,17 +2,17 @@ package br.com.youthquake.config
 
 import android.os.AsyncTask
 import br.com.youthquake.model.Question
-import br.com.youthquake.service.RequestQuestions
+import br.com.youthquake.service.FillQuestionsService
 
 import feign.Feign
 import feign.jackson.JacksonDecoder
 
-class FillQuestionsTask : AsyncTask<Int, Void, Question>() {
+class FillQuestions : AsyncTask<Int, Void, Question>() {
     override fun doInBackground(vararg params: Int?): Question? {
         val request = Feign.builder()
             .decoder(JacksonDecoder())
             .target(
-                RequestQuestions::class.java,
+                FillQuestionsService::class.java,
                 "http://demo5706957.mockable.io/"
             )
 

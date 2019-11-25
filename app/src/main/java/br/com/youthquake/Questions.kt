@@ -5,11 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
-import br.com.youthquake.config.FillQuestionsTask
+import br.com.youthquake.config.FillQuestions
 import br.com.youthquake.model.Question
 import kotlinx.android.synthetic.main.activity_main_quizz.*
 
-class MainQuizz : AppCompatActivity() {
+class Questions : AppCompatActivity() {
 
     private var counter: Int = 0
     private var currentQuestion: Question? = null
@@ -18,7 +18,7 @@ class MainQuizz : AppCompatActivity() {
     private var score: Int = 0
     private var answer: Boolean = false
 
-    private val task = FillQuestionsTask()
+    private val task = FillQuestions()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +32,7 @@ class MainQuizz : AppCompatActivity() {
                 if (radioButton1!!.isChecked || radioButton2!!.isChecked || radioButton3!!.isChecked || radioButton4!!.isChecked)
                     check()
                 else
-                    Toast.makeText(this@MainQuizz, "Opa! Você precisa selcionar uma opção", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@Questions, "Opa! Você precisa selcionar uma opção", Toast.LENGTH_SHORT).show()
             } else {
                 showQuestion()
             }
@@ -82,7 +82,7 @@ class MainQuizz : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        Toast.makeText(this@MainQuizz, "Pressione novamente para sair", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this@Questions, "Pressione novamente para sair", Toast.LENGTH_SHORT).show()
         startActivity(Intent(applicationContext, MainActivity::class.java))
     }
 }
