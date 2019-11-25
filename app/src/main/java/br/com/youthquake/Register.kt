@@ -1,5 +1,6 @@
 package br.com.youthquake
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -13,6 +14,11 @@ class Register : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
+        imgArrowRegister.setOnClickListener {
+            val backMain = Intent(this, MainActivity::class.java)
+            startActivity(backMain)
+        }
     }
 
     fun includeUser(v:View) {

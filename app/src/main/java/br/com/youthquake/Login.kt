@@ -14,6 +14,11 @@ class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        imgArrowLogin.setOnClickListener {
+            val backMain = Intent(this, MainActivity::class.java)
+            startActivity(backMain)
+        }
     }
     fun authenticAcessUser(view: View){
         val user = User()
