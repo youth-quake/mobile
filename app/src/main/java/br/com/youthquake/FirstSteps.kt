@@ -8,7 +8,6 @@ import kotlinx.android.synthetic.main.activity_firststeps.*
 
 class FirstSteps : AppCompatActivity() {
 
-    var lastBack:Long = 0L
     var step :Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,9 +61,11 @@ class FirstSteps : AppCompatActivity() {
         }
     }
 
+    var lastBack:Long = 0L
+
     override fun onBackPressed() {
         if (System.currentTimeMillis() - lastBack > 2000) {
-            Toast.makeText(this, R.string.pressBackToFinish, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.pressBackToFinish), Toast.LENGTH_SHORT).show()
             lastBack = System.currentTimeMillis()
         }
         else finishAffinity()

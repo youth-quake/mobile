@@ -26,17 +26,33 @@
         <item name="android:textAlignment">center</item>
     </style>
 
+    <style name="fontMenu" >
+        <item name="android:width">250dp</item>
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/whiteTheme</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="titleHome">
         <item name="android:fontFamily">Roboto</item>
-        <item name="android:textSize">25dp</item>
+        <item name="android:textSize">20dp</item>
         <item name="android:textAlignment">center</item>
         <item name="android:layout_width">300dp</item>
     </style>
 
     <style name="infoHome">
         <item name="android:fontFamily">Roboto</item>
-        <item name="android:textSize">20dp</item>
+        <item name="android:textSize">16dp</item>
         <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/whiteTheme</item>
+    </style>
+
+    <style name="infoFooter">
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/whiteTheme</item>
     </style>
 
     <!--Apostas e Movimentações - Titulos-->

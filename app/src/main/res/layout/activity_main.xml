@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/bglines"
-    tools:context=".MainActivity"
-    >
+    tools:context=".MainActivity">
 
     <ImageView
         android:layout_width="300dp"
@@ -16,8 +15,7 @@
         app:layout_constraintRight_toLeftOf="parent"
         android:src="@mipmap/logo"
         android:id="@+id/imgLogo"
-        tools:ignore="MissingConstraints"
-    />
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tvTitulo"
@@ -27,21 +25,19 @@
         app:layout_constraintTop_toBottomOf="@id/imgLogo"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
-        android:text="@string/titleMain"
-     />
+        android:text="@string/titleMain" />
 
     <Button
         android:id="@+id/btCriarConta"
         style="@style/btnBranco"
         android:layout_width="250dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="180dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/tvTitulo"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         android:text="@string/buttonCreate"
-        tools:ignore="MissingConstraints"
-    />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btEntrar"
@@ -53,8 +49,6 @@
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         android:text="@string/buttonLogin"
-        tools:ignore="MissingConstraints"
-    />
-
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

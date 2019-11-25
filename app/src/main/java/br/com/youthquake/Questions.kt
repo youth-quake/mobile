@@ -1,22 +1,29 @@
 package br.com.youthquake
 
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.CalendarContract
 import android.view.View
 import android.widget.*
+import androidx.core.util.toRange
 import br.com.youthquake.config.FillQuestions
 import br.com.youthquake.model.Question
 import kotlinx.android.synthetic.main.activity_questions.*
+import java.util.concurrent.ThreadLocalRandom
+import kotlin.random.Random
 
 class Questions : AppCompatActivity() {
 
-    private var counter: Int = 0
+
+    private var counter: Int = 1
     private var currentQuestion: Question? = null
     private var countTotal: Int = 5
 
     private var score: Int = 0
-    private var answer: Boolean = false
+    private var answered: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,8 +32,9 @@ class Questions : AppCompatActivity() {
         txtCountQuestions.text = "Questão $counter/$countTotal"
         currentQuestion = fillQuestion()
 
+
         submitButton!!.setOnClickListener {
-            if (!answer) {
+            if (!answered) {
                 if (radioButton1!!.isChecked || radioButton2!!.isChecked || radioButton3!!.isChecked || radioButton4!!.isChecked)
                     check()
                 else
@@ -37,23 +45,26 @@ class Questions : AppCompatActivity() {
         }
     }
 
-    private fun fillQuestion(): Question? {
-        val task = FillQuestions()
-        val modelQuestion:Question = task.execute(1).get()
+    var totalQuestions = 10
 
-        return Question(
-            modelQuestion.idQuestion,
-            modelQuestion.question,
-            modelQuestion.firstOption,
-            modelQuestion.secondOption,
-            modelQuestion.thirdOption,
-            modelQuestion.fourthOption,
-            modelQuestion.rightAnswer
-        )
+    private fun fillQuestion(): Question? {
+        val fillQuestion = FillQuestions()
+        val modelQuestion:Question? = fillQuestion.execute((0..totalQuestions).shuffled().last().toInt()).get()
+
+        modelQuestion?.idQuestion
+        modelQuestion?.question
+        modelQuestion?.firstOption
+        modelQuestion?.secondOption
+        modelQuestion?.thirdOption
+        modelQuestion?.fourthOption
+        modelQuestion?.rightAnswer
+
+        return modelQuestion
     }
 
     private fun showQuestion() {
 
+        answered = false
         radioGroup!!.clearCheck()
 
         if (counter < countTotal) {
@@ -65,24 +76,32 @@ class Questions : AppCompatActivity() {
             radioButton3.text = currentQuestion?.thirdOption
             radioButton4.text = currentQuestion?.fourthOption
 
-            counter++
             txtCountQuestions.text = "Questão: $counter/$countTotal"
 
-            answer = false
+            counter++
 
-            submitButton!!.text = "Avançar"
+            if(radioButton1!!.isChecked || radioButton2!!.isChecked || radioButton3!!.isChecked || radioButton4!!.isChecked){
+                check()
+            }
+
+            submitButton.text = "Avançar"
         } else {
+            submitButton.text = "Finalizar"
             finishQuizActivity()
         }
     }
 
     private fun check() {
-        answer = true
+
+        answered = true
 
         val radioSelected = findViewById<View>(radioGroup!!.checkedRadioButtonId) as RadioButton
         val answer = radioSelected.text
 
-        if (answer == currentQuestion?.rightAnswer) score++
+        if (answer == currentQuestion?.rightAnswer) {
+            radioSelected.setTextColor(Color.GREEN)
+            score++
+        }
 
     }
 
@@ -90,8 +109,14 @@ class Questions : AppCompatActivity() {
         Intent().putExtra("finalScore", score)
     }
 
+    var lastBack:Long = 0L
+
     override fun onBackPressed() {
-        Toast.makeText(this@Questions, "Pressione novamente para sair", Toast.LENGTH_SHORT).show()
-        startActivity(Intent(applicationContext, MainActivity::class.java))
+        if (System.currentTimeMillis() - lastBack > 2000) {
+            Toast.makeText(this, getString(R.string.pressBackToFinish), Toast.LENGTH_SHORT).show()
+            lastBack = System.currentTimeMillis()
+        }
+        else finishAffinity()
     }
 }
+

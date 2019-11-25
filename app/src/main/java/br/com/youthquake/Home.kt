@@ -17,7 +17,7 @@ class Home : AppCompatActivity() {
 
         var path:String? = intent.getStringExtra("picture")
 
-        if(path == null) path = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnCnE2KZRNzHPweOgduka2zTxOxM6BLvpNgdLD6kvQhrsO3Jum&s"
+        if(path == null) path = "http://icons.iconarchive.com/icons/designbolts/free-multimedia/1024/Photo-icon.png"
 
         Picasso.get().load(path).into(imgPerfil)
 

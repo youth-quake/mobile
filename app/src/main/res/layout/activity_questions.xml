@@ -15,7 +15,7 @@
          android:text="Questão 1/10"
          app:layout_constraintLeft_toRightOf="parent"
          app:layout_constraintRight_toLeftOf="parent"
-         android:paddingTop="70dp"
+         android:paddingTop="60dp"
     />
 
     <TextView
@@ -23,7 +23,7 @@
         style="@style/font"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="165dp"
+        android:layout_marginTop="150dp"
         android:text="Quais são as etapas do acúmulo de um patrimônio solido?"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"

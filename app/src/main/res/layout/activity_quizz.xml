@@ -5,20 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Quizz"
-    android:background="@mipmap/questionstyle">
+    android:background="@mipmap/bglines">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_margin="16dp"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        android:src="@mipmap/logo"
         android:id="@+id/logo"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:ignore="MissingConstraints" />
 
     <TextView
         style="@style/font"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="250dp"
         android:text="Acerte as questões e ganhe pontos!"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
@@ -26,11 +27,11 @@
 
     <Button
         android:id="@+id/startButton"
-        style="@style/btnRoxo"
+        style="@style/btnBranco"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="250dp"
         android:text="Começar"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
