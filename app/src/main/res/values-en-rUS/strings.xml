@@ -25,6 +25,7 @@
 
     <!--Steps-->
     <string name="buttonUnderstand">Understand!</string>
+    <string name="btStepNext">Next</string>
     <string name="titleStep1">Hello, %1$s! Control your expenses</string>
     <string name="subTitleStep1">Record your expenses and savings for better control.</string>
     <string name="titleStep2">Interact with friends</string>
@@ -42,5 +43,6 @@
     <string name="nameInput">Name</string>
     <string name="confirmEmail">Confirm your email</string>
 
+    <string name="pressBackToFinish">Press back to finish</string>
 
 </resources>

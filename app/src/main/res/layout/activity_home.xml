@@ -26,12 +26,11 @@
         app:layout_constraintTop_toBottomOf="@id/imgArrowHome" />
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/tvName"
         style="@style/titleHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Giuliana"
         android:textColor="@color/whiteTheme"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="parent"
@@ -39,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@id/imgPerfil" />
 
     <TextView
-        android:id="@+id/level"
+        android:id="@+id/tvLevel"
         style="@style/infoHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,7 +48,7 @@
         android:textColor="@color/whiteTheme"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name" />
+        app:layout_constraintTop_toBottomOf="@id/tvName" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clQuiz"
@@ -59,10 +58,10 @@
         android:background="@drawable/top_border_white"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/level">
+        app:layout_constraintTop_toBottomOf="@id/tvLevel">
 
         <TextView
-            android:id="@+id/txtQuiz"
+            android:id="@+id/tvQuizz"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25dp"
@@ -89,7 +88,7 @@
         app:layout_constraintTop_toBottomOf="@id/clQuiz">
 
         <TextView
-            android:id="@+id/txtMeusAmigos"
+            android:id="@+id/tvMeusAmigos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25dp"
@@ -115,7 +114,7 @@
         app:layout_constraintTop_toBottomOf="@id/clMeusAmigos">
 
         <TextView
-            android:id="@+id/txtSair"
+            android:id="@+id/tvSair"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sair"

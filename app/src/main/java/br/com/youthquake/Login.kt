@@ -32,7 +32,7 @@ class Login : AppCompatActivity() {
 
     fun enableAccess(idUser:Long?,name:String?,login:String?,email:String?,password:String?,
                     messageStatus:String?,level:Int?){
-        val goHome = Intent(this, Firststep::class.java)
+        val goHome = Intent(this, FirstSteps::class.java)
         goHome.putExtra("idUser", idUser)
         goHome.putExtra("name",  name)
         goHome.putExtra("login", login)

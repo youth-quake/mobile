@@ -26,6 +26,7 @@
 
     <!--Steps-->
     <string name="buttonUnderstand">Entendi!</string>
+    <string name="btStepNext">Próximo</string>
     <string name="titleStep1">Olá, %1$s! Controle seus gastos</string>
     <string name="subTitleStep1">Registre seus gastos e economias para melhor controle</string>
     <string name="titleStep2">Interaja com amigos</string>
@@ -43,4 +44,5 @@
     <string name="nameInput">Nome</string>
     <string name="confirmEmail">Confirme seu e-mail</string>
 
+    <string name="pressBackToFinish">Clique novamente para sair</string>
 </resources>

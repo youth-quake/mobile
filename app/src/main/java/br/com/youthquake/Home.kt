@@ -11,6 +11,9 @@ class Home : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        tvName.text = intent.getStringExtra("name")
+        tvLevel.text = intent.getStringExtra("name")
+
         clQuiz.setOnClickListener{
             val actQuizz = Intent(this, Quizz::class.java)
             actQuizz.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
