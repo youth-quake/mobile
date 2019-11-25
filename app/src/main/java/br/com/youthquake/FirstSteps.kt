@@ -20,7 +20,7 @@ class FirstSteps : AppCompatActivity() {
         img.setImageDrawable(getDrawable(R.mipmap.cartao))
         lbTitle.text = getString(R.string.titleStep1, name)
         lbSubTitle.text = getString(R.string.subTitleStep1)
-        btNext.text = R.string.btStepNext.toString()
+        btNext.text = getString(R.string.btStepNext)
 
         btNext.setOnClickListener{
             when(step) {
@@ -33,7 +33,7 @@ class FirstSteps : AppCompatActivity() {
                     img.setImageDrawable(getDrawable(R.mipmap.openbook))
                     lbTitle.text = getString(R.string.titleStep3)
                     lbSubTitle.text = getString(R.string.subTitleStep1)
-                    btNext.text = "Entendi!"
+                    btNext.text = getString(R.string.buttonUnderstand)
 
                     val home = Intent(this, Home::class.java)
                     home.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
