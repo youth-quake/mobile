@@ -31,7 +31,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:inputType="text" />
+        android:inputType="text"
+        android:background="@drawable/bottom_border_primary"
+        android:textCursorDrawable="@drawable/cursor" />
 
     <EditText
         android:layout_width="268dp"
@@ -41,9 +43,12 @@
         app:layout_constraintRight_toRightOf="parent"
         android:hint="@string/passwordInput"
         android:id="@+id/etPassword"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:background="@drawable/bottom_border_primary"
+        android:textCursorDrawable="@drawable/cursor" />
 
     <Switch
+        android:theme="@style/switchStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Lembrar de mim"
@@ -52,7 +57,8 @@
         app:layout_constraintTop_toBottomOf="@id/etPassword"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
-        android:padding="10dp"/>
+        android:padding="20dp"
+        android:layout_marginTop="10dp"/>
 
     <Button
         android:layout_width="237dp"
