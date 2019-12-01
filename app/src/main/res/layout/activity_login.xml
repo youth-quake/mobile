@@ -6,19 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/retangle"
-    tools:context=".Login"
-    >
-
-    <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@mipmap/arrowback"
-        tools:ignore="MissingConstraints" />
+    tools:context=".Login">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Entrar"
+        android:text="@string/signin"
         app:layout_constraintBottom_toTopOf="@+id/etUsername"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -26,13 +19,12 @@
         android:layout_marginRight="200dp"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:textColor="@color/colorPrimary"
-        />
+        android:textColor="@color/colorPrimary" />
 
     <EditText
         android:layout_width="268dp"
         android:layout_height="wrap_content"
-        android:hint="E-mail ou username"
+        android:hint="@string/inputUsername"
         android:id="@+id/etUsername"
         android:layout_marginTop="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,7 +32,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:inputType="text"
-        />
+        android:background="@drawable/bottom_border_primary"
+        android:textCursorDrawable="@drawable/cursor" />
 
     <EditText
         android:layout_width="268dp"
@@ -48,29 +41,37 @@
         app:layout_constraintTop_toBottomOf="@id/etUsername"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:hint="Senha"
+        android:hint="@string/passwordInput"
         android:id="@+id/etPassword"
         android:inputType="textPassword"
-        />
+        android:background="@drawable/bottom_border_primary"
+        android:textCursorDrawable="@drawable/cursor" />
+
+    <Switch
+        android:theme="@style/switchStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Lembrar de mim"
+        android:id="@+id/remember"
+        android:checked="true"
+        app:layout_constraintTop_toBottomOf="@id/etPassword"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        android:padding="20dp"
+        android:layout_marginTop="10dp"/>
 
     <Button
         android:layout_width="237dp"
         android:layout_height="wrap_content"
-        android:text="Entrar"
+        android:text="@string/signin"
         android:textColor="@android:color/white"
         style="@style/btnRoxo"
-        android:textSize="15sp"
-        android:textStyle="bold"
         android:topLeftRadius="10dp"
         android:topRightRadius="10dp"
-        android:id="@+id/btLogar"
-        app:layout_constraintTop_toBottomOf="@id/etPassword"
+        android:id="@+id/btLogin"
+        app:layout_constraintTop_toBottomOf="@id/remember"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="20dp"
-        />
-
-
-
+        android:layout_marginTop="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

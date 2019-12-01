@@ -1,44 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/bglines"
-    android:orientation="vertical"
-    android:elevation="0dp">
+    tools:context=".MainActivity">
 
     <ImageView
         android:layout_width="300dp"
         android:layout_height="200dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="30dp"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
         android:src="@mipmap/logo"
-    />
+        android:id="@+id/imgLogo"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/tvTitulo"
         style="@style/font"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Revolucione no mercado financeiro"
-     />
+        app:layout_constraintTop_toBottomOf="@id/imgLogo"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:text="@string/titleMain" />
 
     <Button
         android:id="@+id/btCriarConta"
         style="@style/btnBranco"
         android:layout_width="250dp"
+        android:layout_marginTop="180dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="25px"
-        android:text="Criar conta" />
+        app:layout_constraintTop_toBottomOf="@id/tvTitulo"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        android:text="@string/buttonCreate"
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btEntrar"
         style="@style/btnRoxo"
         android:layout_width="250dp"
+        android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Entrar"
-    />
-</LinearLayout>
+        app:layout_constraintTop_toBottomOf="@id/btCriarConta"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        android:text="@string/buttonLogin"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

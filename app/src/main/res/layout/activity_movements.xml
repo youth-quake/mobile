@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteTheme"
+    tools:context=".Movements">
+
+    <ImageView
+        android:id="@+id/arrowBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@mipmap/arrowback_dark"
+        tools:ignore="MissingConstraints"
+    />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:text="@string/titleMovements"
+        style="@style/titleBetMovements"
+        app:layout_constraintTop_toBottomOf="@id/arrowBack"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:id="@+id/tvTitle"
+    />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/labelsInputs"
+        android:text="@string/labelTypeMovements"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:id="@+id/lbTypeMovements"
+    />
+
+    <EditText
+        style="@style/editTextBetAndMoviments"
+        app:layout_constraintTop_toBottomOf="@id/lbTypeMovements"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:hint="Economia, gastos, investimentos"
+        android:id="@+id/edTypeMovements"
+    />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/labelsInputs"
+        android:text="@string/labelValueMovements"
+        app:layout_constraintTop_toBottomOf="@id/edTypeMovements"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:id="@+id/lbValueMovements"
+    />
+
+    <EditText
+        style="@style/editTextBetAndMoviments"
+        app:layout_constraintTop_toBottomOf="@id/lbValueMovements"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:inputType="number"
+        android:hint="Quantia"
+        android:id="@+id/edValueMovements"
+    />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/labelsInputs"
+        android:text="@string/labelDateMovements"
+        app:layout_constraintTop_toBottomOf="@id/edValueMovements"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:id="@+id/lbDateMovements"
+    />
+
+    <EditText
+        style="@style/editTextBetAndMoviments"
+        app:layout_constraintTop_toBottomOf="@id/lbDateMovements"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:inputType="date"
+        android:hint="Data da transação"
+        android:id="@+id/edDateMovements"
+    />
+
+    <Button
+        android:layout_width="237dp"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonMovementsText"
+        style="@style/buttonBetAndMoviments"
+        android:id="@+id/btBet"
+        app:layout_constraintTop_toBottomOf="@id/edDateMovements"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

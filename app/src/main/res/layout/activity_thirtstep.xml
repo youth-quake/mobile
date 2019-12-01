@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
+    android:layout_height="match_parent"
+    tools:context=".Thirtstep">
+
+    <ImageView
+        android:id="@+id/imgArrowStep3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:paddingTop="10dp"
+        android:src="@mipmap/arrowback"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_height="wrap_content"
+        style="@style/titleSteps"
+        android:textColor="@color/whiteTheme"
+        android:textStyle="bold"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgArrowStep3"
+        android:text="@string/titleStep3"
+        android:id="@+id/lbTitleStep3"
+    />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@mipmap/openbook"
+        app:layout_constraintTop_toBottomOf="@id/lbTitleStep3"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:id="@+id/imgBook"
+    />
+
+    <TextView
+        android:layout_height="wrap_content"
+        style="@style/subtitleSteps"
+        android:textColor="@color/whiteTheme"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgBook"
+        android:text="@string/subTitleStep3"
+        android:id="@+id/lbSubTitleStep3"
+    />
+
+    <Button
+        android:id="@+id/undersThree"
+        style="@style/btnBranco"
+        android:layout_width="250dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/lbSubTitleStep3"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        android:text="@string/buttonUnderstand"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

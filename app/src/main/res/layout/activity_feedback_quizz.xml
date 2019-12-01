@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FeedbackQuizz"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/titleWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fim de Jogo"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        android:padding="30dp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title">
+
+
+    <ImageView
+        android:id="@+id/trophy"
+        android:layout_width="109dp"
+        android:layout_height="90dp"
+        android:src="@mipmap/trofeu"
+        android:elevation="@android:dimen/thumbnail_height"
+        android:layout_gravity="top|center"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:contentDescription="Trofeu" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="360dp"
+        android:padding="20dp"
+        android:layout_marginTop="20dp"
+        android:elevation="@android:dimen/app_icon_size"
+        android:background="@drawable/btn_branco_forma">
+
+        <TextView
+            android:id="@+id/tvCongratulations"
+            style="@style/font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Parabéns! Aqui está seu desempenho:"
+            app:layout_constraintTop_toTopOf="@id/clInfo"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintLeft_toRightOf="parent"
+            android:layout_marginTop="60dp"/>
+
+        <LinearLayout
+            android:id="@+id/flPoints"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintLeft_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            app:layout_constraintTop_toBottomOf="@id/tvCongratulations">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clWrongAnswer"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:padding="15dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/frame_point">
+
+                <TextView
+                    android:id="@+id/tvTitleWrong"
+                    style="@style/titleFeedbackQuizz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ERROS"
+                    app:layout_constraintRight_toLeftOf="parent"
+                    app:layout_constraintLeft_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/clWrongAnswer" />
+
+                <TextView
+                    android:id="@+id/tvWrongPoints"
+                    style="@style/wrongAnswer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4"
+                    app:layout_constraintRight_toLeftOf="parent"
+                    app:layout_constraintLeft_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleWrong"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clRightAnswer"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:padding="15dp"
+                android:background="@drawable/frame_point">
+
+                <TextView
+                    android:id="@+id/tvTitleRight"
+                    style="@style/titleFeedbackQuizz"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ACERTOS"
+                    app:layout_constraintRight_toLeftOf="parent"
+                    app:layout_constraintLeft_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/clRightAnswer" />
+
+                <TextView
+                    android:id="@+id/tvRightPoints"
+                    style="@style/rightAnswer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6"
+                    app:layout_constraintRight_toLeftOf="parent"
+                    app:layout_constraintLeft_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleRight"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvTotalPoints"
+            style="@style/titleFeedbackQuizz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SEUS PONTOS: +60"
+            app:layout_constraintTop_toBottomOf="@id/flPoints"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:layout_constraintLeft_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        android:padding="30dp">
+
+        <Button
+            android:id="@+id/btCriarConta"
+            style="@style/btnRoxo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sair"
+            tools:ignore="MissingConstraints"
+            android:layout_marginRight="10dp"/>
+
+        <Button
+            android:id="@+id/btEntrar"
+            style="@style/btnBranco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btCriarConta"
+            android:text="Jogar"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
