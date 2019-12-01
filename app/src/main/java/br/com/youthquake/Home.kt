@@ -1,10 +1,14 @@
 package br.com.youthquake
 
+import android.content.Context
 import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_home.*
+import com.squareup.picasso.Picasso
 
 class Home : AppCompatActivity() {
 
@@ -13,38 +17,40 @@ class Home : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val idUser = intent.getLongExtra("idUser", 0)
-        val nameUser = intent.getStringExtra("name")
-        val login = intent.getStringExtra("login")
-        val email = intent.getStringExtra("email")
-        val password = intent.getStringExtra("password")
-        val messageStatus = intent.getStringExtra("messageStatus")
-        val levelUser = intent.getIntExtra("level", 0)
+        tvName.text = intent.getStringExtra("name")
+        tvLevel.text = getString(R.string.levelUser, intent.getIntExtra("level", 0))
 
-        imgArrowHome.setOnClickListener {
-             val backMain = Intent(this, MainActivity::class.java)
-             startActivity(backMain)
+        imgPerfil.setImageDrawable(getDrawable(R.mipmap.chick))
+
+        clQuiz.setOnClickListener{
+            val actQuizz = Intent(this, Quizz::class.java)
+            actQuizz.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(actQuizz)
         }
 
-        imgArrowExit.setOnClickListener {
-            val backMain = Intent(this, MainActivity::class.java)
-            startActivity(backMain)
+        clMeusAmigos.setOnClickListener{
+            val actMeusAmigos = Intent(this, Friends::class.java)
+            actMeusAmigos.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(actMeusAmigos)
         }
 
-        imgArrowFriends.setOnClickListener {
-            val goFriends = Intent(this, Friends::class.java)
-            goFriends.putExtra("idUser", idUser)
-            goFriends.putExtra("name",  nameUser)
-            goFriends.putExtra("login", login)
-            goFriends.putExtra("email", email)
-            goFriends.putExtra("password", password)
-            goFriends.putExtra("messageStatus", messageStatus)
-            goFriends.putExtra("level", levelUser)
-            startActivity(goFriends)
+        clSair.setOnClickListener{
+            val actLogin = Intent(this, Login::class.java)
+            actLogin.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(actLogin)
         }
+    }
 
-        name.text = nameUser
-        level.text = getString(R.string.level, levelUser)
+    var lastBack:Long = 0L
+
+    override fun onBackPressed() {
+        if (System.currentTimeMillis() - lastBack > 2000) {
+            Toast.makeText(this, getString(R.string.pressBackToFinish), Toast.LENGTH_SHORT).show()
+            lastBack = System.currentTimeMillis()
+        }
+        else {
+            finishAffinity()
+        }
     }
 }
 

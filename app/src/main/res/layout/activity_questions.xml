@@ -4,8 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainQuizz"
+    tools:context=".Questions"
     android:background="@mipmap/questionstyle">
+
+    <ImageView
+        android:id="@+id/imgArrow"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:padding="15dp"
+        android:src="@mipmap/arrow"
+        tools:ignore="MissingConstraints" />
 
     <TextView
          android:id="@+id/txtCountQuestions"
@@ -15,20 +23,19 @@
          android:text="Questão 1/10"
          app:layout_constraintLeft_toRightOf="parent"
          app:layout_constraintRight_toLeftOf="parent"
-         android:paddingTop="70dp"
-    />
+         android:padding="15dp"
+        app:layout_constraintTop_toBottomOf="@id/imgArrow" />
 
     <TextView
         android:id="@+id/question"
         style="@style/font"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="165dp"
-        android:text="Quais são as etapas do acúmulo de um patrimônio solido?"
+        android:layout_marginTop="120dp"
+        android:padding="10dp"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCountQuestions"
-   />
+        app:layout_constraintTop_toBottomOf="@+id/txtCountQuestions" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -36,51 +43,43 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:padding="5dp"
+        android:visibility="gone"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/question"
-     >
+        app:layout_constraintTop_toBottomOf="@id/question">
         <RadioButton
             android:id="@+id/radioButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Economize e invista."
-            style="@style/fontQuestion"
-         />
+            style="@style/fontQuestion" />
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Economize"
-            style="@style/fontQuestion"
-         />
+            style="@style/fontQuestion" />
         <RadioButton
             android:id="@+id/radioButton3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Invista, economize."
-            style="@style/fontQuestion"
-         />
+            style="@style/fontQuestion" />
         <RadioButton
             android:id="@+id/radioButton4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Todas as alternativas."
-            style="@style/fontQuestion"
-         />
+            style="@style/fontQuestion" />
     </RadioGroup>
 
     <Button
         android:id="@+id/submitButton"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Próxima"
+        android:layout_marginTop="20dp"
+        android:text="Avançar"
         android:textSize="20dp"
+        android:visibility="gone"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/radioGroup"
-        style="@style/btnRoxo"
-     />
+        style="@style/btnRoxo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

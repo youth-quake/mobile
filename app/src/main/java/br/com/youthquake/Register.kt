@@ -15,24 +15,17 @@ class Register : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        imgArrowRegister.setOnClickListener {
-            val backMain = Intent(this, MainActivity::class.java)
-            startActivity(backMain)
+        btCadastrar.setOnClickListener{
+            val user = User()
+            user.name = etNome.text.toString()
+            user.login = etUsername.text.toString()
+            user.password = etSenha.text.toString()
+            user.email = etEmail.text.toString()
+
+            val call = UserInclude()
+            call.execute(user)
+
+            Toast.makeText(this, getString(R.string.registeredSuccessfully), Toast.LENGTH_SHORT).show()
         }
-    }
-
-    fun includeUser(v:View) {
-        val user = User()
-        user.name = etNome.text.toString()
-        user.login = etUsername.text.toString()
-        user.password = etSenha.text.toString()
-        user.email = etEmail.text.toString()
-
-        val call = UserInclude()
-        call.execute(user)
-
-        Toast.makeText(this,
-            "Cadastrado com sucesso!",
-            Toast.LENGTH_SHORT).show()
     }
 }

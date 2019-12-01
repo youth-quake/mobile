@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">youthquake</string>
+    <string name="app_name">Youthquake</string>
 
     <!--Main-->
     <string name="titleMain">Revolucione no mercado financeiro</string>
@@ -22,10 +22,11 @@
 
     <!--Home-->
     <string name="welcome">Bem vindo(a) ao Youthquake</string>
-    <string name="level">Nível %1$d</string>
+    <string name="levelUser">Nível %1$d</string>
 
     <!--Steps-->
     <string name="buttonUnderstand">Entendi!</string>
+    <string name="btStepNext">Próximo</string>
     <string name="titleStep1">Olá, %1$s! Controle seus gastos</string>
     <string name="subTitleStep1">Registre seus gastos e economias para melhor controle</string>
     <string name="titleStep2">Interaja com amigos</string>
@@ -37,10 +38,14 @@
     <string name="signin">Entrar</string>
     <string name="inputUsername">E-mail ou username</string>
     <string name="passwordInput">Senha</string>
+    <string name="rejectedAccess">Usuário/ou senha incorretos</string>
 
     <!--Cadastro-->
     <string name="register">Cadastrar</string>
     <string name="nameInput">Nome</string>
     <string name="confirmEmail">Confirme seu e-mail</string>
+    <string name="registeredSuccessfully">Cadastro finalizado com sucesso</string>
 
+    <!--Sair-->
+    <string name="pressBackToFinish">Clique novamente para sair</string>
 </resources>

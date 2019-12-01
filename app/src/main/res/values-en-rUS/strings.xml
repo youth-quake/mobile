@@ -21,10 +21,11 @@
 
     <!--Home-->
     <string name="welcome">Welcome to Youthquake</string>
-    <string name="level">Level %1$d</string>
+    <string name="levelUser">Level %1$d</string>
 
     <!--Steps-->
     <string name="buttonUnderstand">Understand!</string>
+    <string name="btStepNext">Next</string>
     <string name="titleStep1">Hello, %1$s! Control your expenses</string>
     <string name="subTitleStep1">Record your expenses and savings for better control.</string>
     <string name="titleStep2">Interact with friends</string>
@@ -36,11 +37,15 @@
     <string name="signin">Sign-in</string>
     <string name="passwordInput">Password</string>
     <string name="inputUsername">Email or username</string>
+    <string name="rejectedAccess">Invalid user or password</string>
 
     <!--Cadastro-->
     <string name="register">Register</string>
     <string name="nameInput">Name</string>
     <string name="confirmEmail">Confirm your email</string>
+    <string name="registeredSuccessfully">Cadastro finalizado com sucesso</string>
 
+    <!--Sair-->
+    <string name="pressBackToFinish">Press back to finish</string>
 
 </resources>
