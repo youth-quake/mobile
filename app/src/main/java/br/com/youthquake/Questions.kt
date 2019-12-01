@@ -81,11 +81,11 @@ class Questions : AppCompatActivity() {
 
             txtCountQuestions.text = "Questão: $counter/$countTotal"
 
-            counter++
+            if(counter == countTotal) submitButton.text = "Finalizar"
 
             if(radioButton1.isChecked || radioButton2.isChecked || radioButton3.isChecked || radioButton4.isChecked) check()
 
-            if(counter == countTotal) submitButton.text = "Finalizar"
+            counter++
 
         } else {
             val feedbackQuizz = Intent(this, FeedbackQuizz::class.java)
@@ -106,7 +106,6 @@ class Questions : AppCompatActivity() {
             radioSelected.setTextColor(Color.GREEN)
             score = score + 10
         }
-
     }
 
     var lastBack:Long = 0L

@@ -16,8 +16,9 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginBottom="50dp"
         android:layout_marginRight="200dp"
-        android:textSize="30sp"
+        android:textSize="28sp"
         android:textStyle="bold"
+        android:padding="10dp"
         android:textColor="@color/colorPrimary" />
 
     <EditText
@@ -25,13 +26,14 @@
         android:layout_height="wrap_content"
         android:hint="@string/nameInput"
         android:id="@+id/etNome"
-        android:layout_marginTop="20sp"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:inputType="text"
         android:textColor="@color/colorPrimary"
+        android:background="@drawable/bottom_border_primary"
         android:textCursorDrawable="@drawable/cursor" />
 
     <EditText
@@ -44,6 +46,7 @@
         android:id="@+id/etUsername"
         android:inputType="text"
         android:textColor="@color/colorPrimary"
+        android:background="@drawable/bottom_border_primary"
         android:textCursorDrawable="@drawable/cursor" />
 
     <EditText
@@ -56,6 +59,7 @@
         android:id="@+id/etEmail"
         android:inputType="textEmailAddress"
         android:textColor="@color/colorPrimary"
+        android:background="@drawable/bottom_border_primary"
         android:textCursorDrawable="@drawable/cursor" />
 
     <EditText
@@ -68,6 +72,7 @@
         android:id="@+id/etConfirmEmail"
         android:inputType="textEmailAddress"
         android:textColor="@color/colorPrimary"
+        android:background="@drawable/bottom_border_primary"
         android:textCursorDrawable="@drawable/cursor" />
 
     <EditText
@@ -80,6 +85,7 @@
         android:id="@+id/etSenha"
         android:inputType="textPassword"
         android:textColor="@color/colorPrimary"
+        android:background="@drawable/bottom_border_primary"
         android:textCursorDrawable="@drawable/cursor" />
 
     <Button

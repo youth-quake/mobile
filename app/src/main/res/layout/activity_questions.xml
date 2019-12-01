@@ -23,7 +23,7 @@
          android:text="Questão 1/10"
          app:layout_constraintLeft_toRightOf="parent"
          app:layout_constraintRight_toLeftOf="parent"
-         android:padding="30dp"
+         android:padding="15dp"
         app:layout_constraintTop_toBottomOf="@id/imgArrow" />
 
     <TextView
@@ -31,11 +31,11 @@
         style="@style/font"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="165dp"
+        android:layout_marginTop="120dp"
+        android:padding="10dp"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCountQuestions"
-   />
+        app:layout_constraintTop_toBottomOf="@+id/txtCountQuestions" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -46,46 +46,40 @@
         android:visibility="gone"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/question"
-     >
+        app:layout_constraintTop_toBottomOf="@id/question">
         <RadioButton
             android:id="@+id/radioButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/fontQuestion"
-         />
+            style="@style/fontQuestion" />
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/fontQuestion"
-         />
+            style="@style/fontQuestion" />
         <RadioButton
             android:id="@+id/radioButton3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/fontQuestion"
-         />
+            style="@style/fontQuestion" />
         <RadioButton
             android:id="@+id/radioButton4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/fontQuestion"
-         />
+            style="@style/fontQuestion" />
     </RadioGroup>
 
     <Button
         android:id="@+id/submitButton"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:text="Avançar"
         android:textSize="20dp"
         android:visibility="gone"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/radioGroup"
-        style="@style/btnRoxo"
-     />
+        style="@style/btnRoxo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

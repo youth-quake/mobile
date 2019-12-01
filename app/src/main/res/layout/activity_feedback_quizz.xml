@@ -7,15 +7,6 @@
     tools:context=".FeedbackQuizz"
     android:background="@color/colorPrimary">
 
-    <ImageView
-        android:id="@+id/imgArrow"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:padding="15dp"
-        android:src="@mipmap/arrow"
-        tools:ignore="MissingConstraints"
-        android:contentDescription="Voltar"/>
-
     <TextView
         android:id="@+id/title"
         style="@style/titleWhite"
@@ -25,8 +16,7 @@
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         android:padding="30dp"
-        app:layout_constraintTop_toBottomOf="@id/imgArrow" />
-
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <FrameLayout
         android:layout_width="wrap_content"
@@ -48,8 +38,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clInfo"
-        android:layout_width="320dp"
-        android:layout_height="420dp"
+        android:layout_width="wrap_content"
+        android:layout_height="360dp"
         android:padding="20dp"
         android:layout_marginTop="20dp"
         android:elevation="@android:dimen/app_icon_size"
@@ -162,7 +152,7 @@
         <Button
             android:id="@+id/btCriarConta"
             style="@style/btnRoxo"
-            android:layout_width="160dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sair"
             tools:ignore="MissingConstraints"
@@ -171,7 +161,7 @@
         <Button
             android:id="@+id/btEntrar"
             style="@style/btnBranco"
-            android:layout_width="160dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/btCriarConta"
             android:text="Jogar"
