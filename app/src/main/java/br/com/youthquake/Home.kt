@@ -1,8 +1,10 @@
 package br.com.youthquake
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_home.*
 import com.squareup.picasso.Picasso
@@ -16,16 +18,24 @@ class Home : AppCompatActivity() {
         tvName.text = intent.getStringExtra("name")
         tvLevel.text = getString(R.string.levelUser, intent.getIntExtra("level", 0))
 
-        var path:String? = intent.getStringExtra("picture")
-
-        if(path == null) path = "https://picturesyouthquake.file.core.windows.net/photos/profile-icons/float.png?st=2019-11-25T18%3A31%3A46Z&se=2020-11-26T18%3A31%3A00Z&sp=rl&sv=2018-03-28&sr=f&sig=1mw81OSU9JfTMPjS%2BRDghaE6bzElKRoSmMSMk0aKAIA%3D"
-
-        Picasso.get().load(path).into(imgPerfil)
+        imgPerfil.setImageDrawable(getDrawable(R.mipmap.chick))
 
         clQuiz.setOnClickListener{
             val actQuizz = Intent(this, Quizz::class.java)
             actQuizz.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(actQuizz)
+        }
+
+        clMeusAmigos.setOnClickListener{
+            val actMeusAmigos = Intent(this, Friends::class.java)
+            actMeusAmigos.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(actMeusAmigos)
+        }
+
+        clSair.setOnClickListener{
+            val actLogin = Intent(this, Login::class.java)
+            actLogin.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(actLogin)
         }
     }
 
@@ -37,7 +47,7 @@ class Home : AppCompatActivity() {
             lastBack = System.currentTimeMillis()
         }
         else {
-            finishAndRemoveTask()
+            finishAffinity()
         }
     }
 }

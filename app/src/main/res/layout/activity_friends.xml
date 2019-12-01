@@ -54,16 +54,31 @@
             android:textStyle="bold"
             app:layout_constraintLeft_toRightOf="@id/imgPerfil" />
 
-        <TextView
-            android:id="@+id/level"
-            style="@style/infoHome"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clPontuacao1"
+            android:layout_width="180dp"
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Nível 20"
-            android:textColor="@color/whiteTheme"
-            app:layout_constraintLeft_toRightOf="@id/imgPerfil"
-            app:layout_constraintTop_toBottomOf="@id/name" />
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name">
+
+            <TextView
+                android:id="@+id/tvLevel1"
+                android:text="Nível 35"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/infoHome" />
+
+            <TextView
+                android:id="@+id/tvCoin1"
+                android:text="$$ 2.350,00"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/infoHome" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -77,7 +92,6 @@
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/amigo1">
-
 
         <ImageView
             android:id="@+id/imgPerfil"
@@ -97,16 +111,31 @@
             android:textStyle="bold"
             app:layout_constraintLeft_toRightOf="@id/imgPerfil" />
 
-        <TextView
-            android:id="@+id/level"
-            style="@style/infoHome"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clPontuacao2"
+            android:layout_width="180dp"
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Nível 19"
-            android:textColor="@color/whiteTheme"
-            app:layout_constraintLeft_toRightOf="@id/imgPerfil"
-            app:layout_constraintTop_toBottomOf="@id/name" />
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name">
+
+            <TextView
+                android:id="@+id/tvLevel2"
+                android:text="Nível 25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/infoHome" />
+
+            <TextView
+                android:id="@+id/tvCoin2"
+                android:text="$$ 1.250,00"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/infoHome" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -140,59 +169,31 @@
             android:textStyle="bold"
             app:layout_constraintLeft_toRightOf="@id/imgPerfil" />
 
-        <TextView
-            android:id="@+id/level"
-            style="@style/infoHome"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clPontuacao3"
+            android:layout_width="180dp"
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Nível 15"
-            android:textColor="@color/whiteTheme"
-            app:layout_constraintLeft_toRightOf="@id/imgPerfil"
-            app:layout_constraintTop_toBottomOf="@id/name" />
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tvLevel3"
+                android:text="Nível 12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/infoHome" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/amigo4"
-        android:layout_width="340dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/btn_roxo_forma"
-        android:padding="10dp"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/amigo3">
-
-
-        <ImageView
-            android:id="@+id/imgPerfil"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="50dp"
-            android:src="@mipmap/rainbow" />
-
-        <TextView
-            android:id="@+id/name"
-            style="@style/titleHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Gabriela Delfino"
-            android:textColor="@color/whiteTheme"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toRightOf="@id/imgPerfil" />
-
-        <TextView
-            android:id="@+id/level"
-            style="@style/infoHome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Nível 10"
-            android:textColor="@color/whiteTheme"
-            app:layout_constraintLeft_toRightOf="@id/imgPerfil"
-            app:layout_constraintTop_toBottomOf="@id/name" />
+            <TextView
+                android:id="@+id/tvCoin3"
+                android:text="$$ 825,00"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/infoHome" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -205,7 +206,7 @@
         android:padding="10dp"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/amigo4">
+        app:layout_constraintTop_toBottomOf="@id/amigo3">
 
 
         <ImageView
@@ -226,20 +227,36 @@
             android:textStyle="bold"
             app:layout_constraintLeft_toRightOf="@id/imgPerfil" />
 
-        <TextView
-            android:id="@+id/level"
-            style="@style/infoHome"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clPontuacao4"
+            android:layout_width="180dp"
+            android:paddingLeft="30dp"
+            android:paddingTop="10dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Nível 9"
-            android:textColor="@color/whiteTheme"
-            app:layout_constraintLeft_toRightOf="@id/imgPerfil"
-            app:layout_constraintTop_toBottomOf="@id/name" />
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name">
+
+            <TextView
+                android:id="@+id/tvLevel4"
+                android:text="Nível 11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/infoHome" />
+
+            <TextView
+                android:id="@+id/tvCoin4"
+                android:text="$$ 625,00"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/infoHome" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="70dp"
+        android:layout_width="50dp"
         android:layout_height="70dp"
         android:layout_margin="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -250,6 +267,5 @@
             android:layout_height="wrap_content"
             android:src="@mipmap/arrow_green"></ImageView>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

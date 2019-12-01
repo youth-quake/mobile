@@ -19,13 +19,11 @@
 
     <TextView
         android:id="@+id/tvName"
-        style="@style/titleHome"
+        style="@style/titleWhite"
         android:text="Gabriela"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:textColor="@color/whiteTheme"
-        android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imgPerfil" />
@@ -92,7 +90,7 @@
 
         <TextView
             android:id="@+id/tvMeusAmigos"
-            android:text="Meus Amigos"
+            android:text="Ranking"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/fontMenu"

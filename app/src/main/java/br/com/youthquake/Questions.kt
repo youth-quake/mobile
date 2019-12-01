@@ -17,13 +17,13 @@ import kotlin.random.Random
 
 class Questions : AppCompatActivity() {
 
+    private val totalQuestions = 8
 
     private var counter: Int = 1
     private var currentQuestion: Question? = null
     private var countTotal: Int = 5
 
     private var score: Int = 0
-    private var answered: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,20 +32,21 @@ class Questions : AppCompatActivity() {
         txtCountQuestions.text = "Questão $counter/$countTotal"
         currentQuestion = fillQuestion()
 
+        showQuestion()
 
-        submitButton!!.setOnClickListener {
-            if (!answered) {
-                if (radioButton1!!.isChecked || radioButton2!!.isChecked || radioButton3!!.isChecked || radioButton4!!.isChecked)
-                    check()
-                else
-                    Toast.makeText(this@Questions, "Opa! Você precisa selcionar uma opção", Toast.LENGTH_SHORT).show()
-            } else {
-                showQuestion()
-            }
+        submitButton.setOnClickListener {
+            radioGroup.visibility = View.GONE
+            submitButton.visibility = View.GONE
+
+            showQuestion()
+        }
+
+        imgArrow.setOnClickListener{
+            val actHome = Intent(this, Home::class.java)
+            actHome.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(actHome)
         }
     }
-
-    var totalQuestions = 10
 
     private fun fillQuestion(): Question? {
         val fillQuestion = FillQuestions()
@@ -64,10 +65,12 @@ class Questions : AppCompatActivity() {
 
     private fun showQuestion() {
 
-        answered = false
+        radioGroup.visibility = View.VISIBLE
+        submitButton.visibility = View.VISIBLE
+
         radioGroup!!.clearCheck()
 
-        if (counter < countTotal) {
+        if (counter <= countTotal) {
             currentQuestion = fillQuestion()
 
             question.text = currentQuestion?.question
@@ -80,33 +83,30 @@ class Questions : AppCompatActivity() {
 
             counter++
 
-            if(radioButton1!!.isChecked || radioButton2!!.isChecked || radioButton3!!.isChecked || radioButton4!!.isChecked){
-                check()
-            }
+            if(radioButton1.isChecked || radioButton2.isChecked || radioButton3.isChecked || radioButton4.isChecked) check()
 
-            submitButton.text = "Avançar"
+            if(counter == countTotal) submitButton.text = "Finalizar"
+
         } else {
-            submitButton.text = "Finalizar"
-            finishQuizActivity()
+            val feedbackQuizz = Intent(this, FeedbackQuizz::class.java)
+            feedbackQuizz.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+
+            feedbackQuizz.putExtra("score", score)
+
+            startActivity(feedbackQuizz)
         }
     }
 
     private fun check() {
 
-        answered = true
-
-        val radioSelected = findViewById<View>(radioGroup!!.checkedRadioButtonId) as RadioButton
-        val answer = radioSelected.text
+        val radioSelected = findViewById<View>(radioGroup.checkedRadioButtonId) as RadioButton
+        val answer = radioSelected.text.toString()
 
         if (answer == currentQuestion?.rightAnswer) {
             radioSelected.setTextColor(Color.GREEN)
-            score++
+            score = score + 10
         }
 
-    }
-
-    private fun finishQuizActivity() {
-        Intent().putExtra("finalScore", score)
     }
 
     var lastBack:Long = 0L

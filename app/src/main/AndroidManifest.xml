@@ -7,12 +7,13 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/trofeu"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/trofeu"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".FeedbackQuizz"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,12 +24,10 @@
         <activity android:name=".Register" />
         <activity android:name=".Login" />
         <activity android:name=".FirstSteps" />
-        <activity android:name=".Secondstep" />
-        <activity android:name=".Thirtstep" />
-        <activity android:name=".Home"/>
-        <activity android:name=".Quizz"/>
-        <activity android:name=".Questions"/>
-        <activity android:name=".Friends"/>
+        <activity android:name=".Home" />
+        <activity android:name=".Quizz" />
+        <activity android:name=".Questions" />
+        <activity android:name=".Friends" />
         <activity android:name=".Movements" />
         <activity android:name=".Bet" />
     </application>
