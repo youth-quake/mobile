@@ -43,7 +43,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:padding="5dp"
-        android:visibility="gone"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/question">
@@ -76,7 +75,6 @@
         android:layout_marginTop="20dp"
         android:text="Avançar"
         android:textSize="20dp"
-        android:visibility="gone"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/radioGroup"
