@@ -83,7 +83,7 @@ class Login : AppCompatActivity() {
         level:Int?,
         picture:String?
     ){
-        val goHome = Intent(this, FirstSteps::class.java)
+        val goHome = Intent(this, Home::class.java)
 
         goHome.putExtra("idUser", idUser)
         goHome.putExtra("name",  name)

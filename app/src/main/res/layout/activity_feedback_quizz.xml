@@ -150,7 +150,7 @@
         android:padding="30dp">
 
         <Button
-            android:id="@+id/btCriarConta"
+            android:id="@+id/btExit"
             style="@style/btnRoxo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -159,7 +159,7 @@
             android:layout_marginRight="10dp"/>
 
         <Button
-            android:id="@+id/btEntrar"
+            android:id="@+id/btGame"
             style="@style/btnBranco"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
