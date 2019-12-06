@@ -1,44 +1,50 @@
 package br.com.youthquake
 
 import android.content.Intent
-import android.content.res.ColorStateList
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.CalendarContract
+import android.os.Handler
+import java.util.*
+import kotlin.concurrent.schedule
 import android.view.View
 import android.widget.*
-import androidx.core.util.toRange
 import br.com.youthquake.config.FillQuestions
 import br.com.youthquake.model.Question
 import kotlinx.android.synthetic.main.activity_questions.*
-import java.util.concurrent.ThreadLocalRandom
-import kotlin.random.Random
 
 class Questions : AppCompatActivity() {
 
-    private val totalQuestions = 8
+    private val totalQuestions = 5
 
     private var counter: Int = 1
     private var currentQuestion: Question? = null
     private var countTotal: Int = 5
 
     private var score: Int = 0
+    private var wrong: Int = 0
+    private var right: Int = 0
+
+    private val delayAfterCheckPoints = Handler()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questions)
 
         txtCountQuestions.text = "Questão $counter/$countTotal"
-        currentQuestion = fillQuestion()
 
+        currentQuestion = fillQuestion()
         showQuestion()
 
-        submitButton.setOnClickListener {
-            radioGroup.visibility = View.GONE
-            submitButton.visibility = View.GONE
+        if(answerIsChecked()) checkPoints()
 
-            showQuestion()
+        submitButton.setOnClickListener {
+            if(!answerIsChecked()){
+                Toast.makeText(this, "Você precisa selecionar uma opção", Toast.LENGTH_SHORT).show()
+            }else{
+                checkPoints()
+                delayAfterCheckPoints.postDelayed({ showQuestion() }, 1000)
+            }
         }
 
         imgArrow.setOnClickListener{
@@ -64,14 +70,24 @@ class Questions : AppCompatActivity() {
     }
 
     private fun showQuestion() {
-
-        radioGroup.visibility = View.VISIBLE
-        submitButton.visibility = View.VISIBLE
-
-        radioGroup!!.clearCheck()
-
         if (counter <= countTotal) {
+
+            if(counter === countTotal){
+                submitButton.text = "Finalizar"
+            }
+
+            radioGroup!!.clearCheck()
+
+            radioButton1.setTextColor(Color.BLACK)
+            radioButton2.setTextColor(Color.BLACK)
+            radioButton3.setTextColor(Color.BLACK)
+            radioButton4.setTextColor(Color.BLACK)
+
             currentQuestion = fillQuestion()
+
+            while(currentQuestion?.question.isNullOrBlank()){
+                currentQuestion = fillQuestion()
+            }
 
             question.text = currentQuestion?.question
             radioButton1.text = currentQuestion?.firstOption
@@ -80,32 +96,40 @@ class Questions : AppCompatActivity() {
             radioButton4.text = currentQuestion?.fourthOption
 
             txtCountQuestions.text = "Questão: $counter/$countTotal"
-
-            if(counter == countTotal) submitButton.text = "Finalizar"
-
-            if(radioButton1.isChecked || radioButton2.isChecked || radioButton3.isChecked || radioButton4.isChecked) check()
-
             counter++
 
         } else {
-            val feedbackQuizz = Intent(this, FeedbackQuizz::class.java)
-            feedbackQuizz.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            val actResult = Intent(this, FeedbackQuizz::class.java)
+            actResult.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
 
-            feedbackQuizz.putExtra("score", score)
+            actResult.putExtra("score", score)
+            actResult.putExtra("wrong", wrong)
+            actResult.putExtra("right", right)
 
-            startActivity(feedbackQuizz)
+            startActivity(actResult)
         }
     }
 
-    private fun check() {
-
+    private fun checkPoints(){
         val radioSelected = findViewById<View>(radioGroup.checkedRadioButtonId) as RadioButton
         val answer = radioSelected.text.toString()
 
         if (answer == currentQuestion?.rightAnswer) {
             radioSelected.setTextColor(Color.GREEN)
-            score = score + 10
+            score++
+            right++
+        }else{
+            radioSelected.setTextColor(Color.RED)
+            wrong++
         }
+    }
+
+    private fun answerIsChecked():Boolean {
+       if(radioButton1.isChecked() || radioButton2.isChecked() || radioButton3.isChecked() || radioButton4.isChecked()){
+           return true
+       }
+
+        return false
     }
 
     var lastBack:Long = 0L
@@ -122,4 +146,3 @@ class Questions : AppCompatActivity() {
         }
     }
 }
-
