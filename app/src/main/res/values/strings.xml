@@ -1,8 +1,11 @@
 <resources>
     <string name="app_name">Youthquake</string>
 
+    <!--UpdateIcon-->
+    <string name="title">Selecione um avatar:</string>
+
     <!--Main-->
-    <string name="titleMain">Revolucione no mercado financeiro</string>
+    <string name="titleMain">A educação financeira como você nunca viu</string>
     <string name="buttonCreate">Criar conta</string>
     <string name="buttonLogin">Entrar</string>
 
@@ -48,4 +51,10 @@
 
     <!--Sair-->
     <string name="pressBackToFinish">Clique novamente para sair</string>
+
+    <!--Home menu-->
+    <string name="goToGame">Quizz</string>
+    <string name="goToRanking">Ranking</string>
+    <string name="goToLogin">Sair</string>
+    <string name="allReserved">Todos os Direitos Reservados © 2019</string>
 </resources>

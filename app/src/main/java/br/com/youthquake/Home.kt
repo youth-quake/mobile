@@ -1,14 +1,21 @@
 package br.com.youthquake
 
-import android.content.Context
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_home.*
-import com.squareup.picasso.Picasso
+import android.R.id.edit
+import android.content.Context
+import android.text.method.TextKeyListener.clear
+import android.content.Context.MODE_PRIVATE
+import android.content.SharedPreferences
+import androidx.core.app.ComponentActivity
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+
+
 
 class Home : AppCompatActivity() {
 
@@ -21,27 +28,48 @@ class Home : AppCompatActivity() {
 
         tvName.text = intent.getStringExtra("name")
         tvLevel.text = getString(R.string.levelUser, level)
-        tvCoin.text = "Y$ ${intent.getIntExtra("score", 0)*level}"
+        tvCoin.text = "YQ ${intent.getIntExtra("score", 10)*level}"
 
-        imgPerfil.setImageDrawable(getDrawable(R.mipmap.chick))
+
+        println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+        println(getDrawable(intent.getIntExtra("pictureDraw", R.mipmap.cockatoo)))
+        println(getDrawable(intent.getIntExtra("pictureDraw", R.mipmap.cockatoo)))
+        println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+
+        imgProfile.setImageDrawable(getDrawable(intent.getIntExtra("pictureDraw", 0)))
+
+        imgProfile.setOnClickListener{
+            goTo(Intent(this, UpdateIconsProfile::class.java))
+        }
 
         clQuiz.setOnClickListener{
-            val actQuizz = Intent(this, Quizz::class.java)
-            actQuizz.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            startActivity(actQuizz)
+            goTo(Intent(this, Quizz::class.java))
         }
 
         clMeusAmigos.setOnClickListener{
-            val actMeusAmigos = Intent(this, Friends::class.java)
-            actMeusAmigos.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            startActivity(actMeusAmigos)
+            goTo(Intent(this, Friends::class.java))
         }
 
         clSair.setOnClickListener{
-            val actLogin = Intent(this, Login::class.java)
-            actLogin.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            startActivity(actLogin)
+
+            val settings = getSharedPreferences("app-alert", Context.MODE_PRIVATE)
+            settings.edit().clear().commit()
+
+            intent.removeExtra("idUser")
+            intent.removeExtra("level")
+            intent.removeExtra("name")
+            intent.removeExtra("login")
+            intent.removeExtra("email")
+            intent.removeExtra("password")
+            intent.removeExtra("messageStatus")
+
+            goTo(Intent(this, Login::class.java))
         }
+    }
+
+    private fun goTo(activity: Intent){
+        activity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+        startActivity(activity)
     }
 
     var lastBack:Long = 0L
