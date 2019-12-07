@@ -17,6 +17,9 @@
         app:layout_constraintRight_toLeftOf="parent"
         android:id="@+id/iconsTitle"
         android:padding="10dp"
-        style="@style/titleFeedbackQuizz" />
+        android:layout_margin="20dp"
+        android:textColor="@color/whiteTheme"
+        style="@style/titleHome"
+        app:layout_constraintTop_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

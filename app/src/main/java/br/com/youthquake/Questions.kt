@@ -16,7 +16,10 @@ class Questions : AppCompatActivity() {
     private val totalQuestions = 5
 
     private var counter: Int = 1
+
+    private var previousQuestion: Question? = null
     private var currentQuestion: Question? = null
+
     private var countTotal: Int = 5
 
     private var score: Int = 0

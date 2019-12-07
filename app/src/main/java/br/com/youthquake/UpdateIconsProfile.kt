@@ -1,134 +1,120 @@
 package br.com.youthquake
 
-import android.annotation.SuppressLint
+import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.view.Gravity
 import android.view.ViewGroup
+import android.widget.GridLayout
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.LinearLayout.LayoutParams
-import android.widget.TextView
-import kotlinx.android.synthetic.main.activity_update_icons_profile.*
+import br.com.youthquake.config.UserUpdate
+import br.com.youthquake.model.User
+import com.github.siyamed.shapeimageview.CircularImageView
 
 class UpdateIconsProfile : AppCompatActivity() {
 
-    private val maxWidth = 660
-    private val marginPerComponent = 10
-    private val sizeImage = 190
+    private var userUpdated: User? = null
+
+    private val delayAfterClickImage = Handler()
+
+    private val marginPerComponent = 25
+    private val sizeImage = 150
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_icons_profile)
-        
-        val frame = addMainFrame()
+
+        val frame = GridLayout(applicationContext)
+
+        val ltParams = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
+        ltParams.setMargins(50,200,50,0)
+
+        frame.layoutParams = ltParams
+        frame.orientation = GridLayout.HORIZONTAL
+        frame.columnCount = 3
         frame.background = getDrawable(R.color.colorPrimary)
 
-        frame.addView(createFrameWithImages(
-            R.mipmap.chick,
-            R.mipmap.alessandra,
-            R.mipmap.akali
-        ))
+        createFrameWithImages(
+            arrayListOf(
+                R.mipmap.skeleton,
+                R.mipmap.rainbow,
+                R.mipmap.cockatoo,
+                R.mipmap.volpe,
+                R.mipmap.bird,
+                R.mipmap.akali,
+                R.mipmap.alessandra,
+                R.mipmap.dracula,
+                R.mipmap.flamingo,
+                R.mipmap.ghost,
+                R.mipmap.gingerbread,
+                R.mipmap.pride,
+                R.mipmap.chick,
+                R.mipmap.cat,
+                R.mipmap.shen,
+                R.mipmap.soccer,
+                R.mipmap.apple,
+                R.mipmap.acoustic,
+                R.mipmap.turtle
+            ), frame)
 
-        frame.addView(createFrameWithImages(
-            R.mipmap.acoustic,
-            R.mipmap.apple,
-            R.mipmap.bird
-        ))
-
-        frame.addView(createFrameWithImages(
-            R.mipmap.pride,
-            R.mipmap.cat,
-            R.mipmap.soccer
-        ))
-
-        frame.addView(createFrameWithImages(
-            R.mipmap.skeleton,
-            R.mipmap.rainbow,
-            R.mipmap.siberianhusky
-        ))
-
-        frame.addView(createFrameWithImages(
-            R.mipmap.flamingo,
-            R.mipmap.volpe,
-            R.mipmap.dracula
-        ))
-
-        val lastImages = addFrame()
-
-        lastImages.addView(addImage(R.mipmap.pacman))
-        lastImages.addView(addImage(R.mipmap.gingerbread))
-
-        frame.addView(lastImages)
-
-        setContentView(frame)
+        addContentView(frame, ltParams)
     }
 
-    private fun addMainFrame():LinearLayout {
-        val frame = LinearLayout(applicationContext)
-        frame.layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
-        frame.orientation = LinearLayout.VERTICAL
-
-        return frame
-    }
-
-    private fun addFrame():LinearLayout{
-        val ltParamsParent = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
-        ltParamsParent.width = 660
-        ltParamsParent.setMargins(10,20,10,20)
-
-        val frame = LinearLayout(applicationContext)
-        frame.layoutParams = ltParamsParent
-
-        return  frame
-    }
-
-    private fun addImage(pathImage:Int) : ImageView{
+    private fun addImage(pathImage:Int, id:Int) : ImageView{
         val ltParams = LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
 
         ltParams.width = sizeImage
         ltParams.height = sizeImage
-        ltParams.setMargins(marginPerComponent, 0, marginPerComponent, 5)
+        ltParams.setMargins(marginPerComponent, marginPerComponent-10, marginPerComponent, marginPerComponent-10)
+        ltParams.gravity = Gravity.LEFT
 
-        var image = ImageView(applicationContext)
-
+        var image = CircularImageView(applicationContext)
         image.layoutParams = ltParams
         image.setImageResource(pathImage)
+        image.borderWidth = 6
+        image.setBorderColor(Color.TRANSPARENT)
+        image.id = id
+
+        image.setOnClickListener{
+            image.setBorderColor(Color.GREEN)
+
+            val updateScore = UserUpdate()
+            val user = User()
+
+            user.idUser = intent.getLongExtra("idUser", 0)
+            user.picture = pathImage.toString()
+
+            userUpdated = updateScore.execute(user).get()
+
+            Intent(this, Home::class.java).putExtra("pictureDraw", user.picture)
+
+            delayAfterClickImage.postDelayed({ goTo(Intent(this, Home::class.java)) }, 1000)
+        }
 
         return image
     }
 
-    private fun createFrameWithImages(stPathImage:Int, ndPathImage:Int, rdPathImage:Int):LinearLayout {
-
-        val ltParamsParent = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
-        ltParamsParent.width = maxWidth
-        ltParamsParent.setMargins(marginPerComponent,20,marginPerComponent,20)
-
-        val frame = LinearLayout(applicationContext)
-        frame.layoutParams = ltParamsParent
-        frame.setPadding(10,10,10,10)
+    private fun createFrameWithImages(totalImagesWithPaths:ArrayList<Int>, frame:GridLayout):GridLayout {
 
         val ltParams = LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        ltParams.width = 190
-        ltParams.height = 190
-        ltParams.setMargins(marginPerComponent, 0, marginPerComponent, 5)
+        ltParams.width = sizeImage
+        ltParams.height = sizeImage
 
-        var stImage = ImageView(applicationContext)
-        stImage.layoutParams = ltParams
-        stImage.setImageResource(stPathImage)
-        frame.addView(stImage)
+        var id = 0
 
-        var ndImage = ImageView(applicationContext)
-        ndImage.layoutParams = ltParams
-        ndImage.setImageResource(ndPathImage)
-        frame.addView(ndImage)
-
-        var rdImage = ImageView(applicationContext)
-        rdImage.layoutParams = ltParams
-        rdImage.setImageResource(rdPathImage)
-        frame.addView(rdImage)
+        totalImagesWithPaths.forEach{img ->
+            frame.addView(addImage(img, id))
+            id++
+        }
 
         return  frame
     }
 
-
+    private fun goTo(activity: Intent){
+        activity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+        startActivity(activity)
+    }
 }

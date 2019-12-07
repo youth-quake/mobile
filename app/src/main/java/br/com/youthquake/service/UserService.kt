@@ -13,7 +13,7 @@ interface UserService {
     @Headers("Content-Type: application/json")
     fun loginUser(user: User): User?
 
-    @RequestLine("PUT user/update")
+    @RequestLine("POST user/update")
     @Headers("Content-Type: application/json")
     fun updateUser(user: User): User?
 }
