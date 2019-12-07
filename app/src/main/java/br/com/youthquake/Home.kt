@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.Toast
+import br.com.youthquake.config.UserUpdate
+import br.com.youthquake.model.User
 import kotlinx.android.synthetic.main.activity_home.*
 import com.squareup.picasso.Picasso
 
@@ -25,23 +27,26 @@ class Home : AppCompatActivity() {
 
         imgPerfil.setImageDrawable(getDrawable(R.mipmap.chick))
 
+        imgPerfil.setOnClickListener{
+            goTo(Intent(this, UpdateIconsProfile::class.java))
+        }
+
         clQuiz.setOnClickListener{
-            val actQuizz = Intent(this, Quizz::class.java)
-            actQuizz.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            startActivity(actQuizz)
+            goTo(Intent(this, Quizz::class.java))
         }
 
         clMeusAmigos.setOnClickListener{
-            val actMeusAmigos = Intent(this, Friends::class.java)
-            actMeusAmigos.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            startActivity(actMeusAmigos)
+            goTo(Intent(this, Friends::class.java))
         }
 
         clSair.setOnClickListener{
-            val actLogin = Intent(this, Login::class.java)
-            actLogin.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            startActivity(actLogin)
+            goTo(Intent(this, Login::class.java))
         }
+    }
+
+    private fun goTo(activity: Intent){
+        activity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+        startActivity(activity)
     }
 
     var lastBack:Long = 0L

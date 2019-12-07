@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.LinearLayout.LayoutParams
+import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_update_icons_profile.*
 
 class UpdateIconsProfile : AppCompatActivity() {
 
@@ -17,8 +19,9 @@ class UpdateIconsProfile : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_icons_profile)
-
-       val frame = addMainFrame()
+        
+        val frame = addMainFrame()
+        frame.background = getDrawable(R.color.colorPrimary)
 
         frame.addView(createFrameWithImages(
             R.mipmap.chick,
@@ -61,12 +64,8 @@ class UpdateIconsProfile : AppCompatActivity() {
     }
 
     private fun addMainFrame():LinearLayout {
-        val ltParamsParent = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
-        ltParamsParent.width = maxWidth
-        ltParamsParent.setMargins(marginPerComponent,marginPerComponent,marginPerComponent,marginPerComponent)
-
         val frame = LinearLayout(applicationContext)
-        frame.layoutParams = ltParamsParent
+        frame.layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
         frame.orientation = LinearLayout.VERTICAL
 
         return frame
@@ -106,6 +105,7 @@ class UpdateIconsProfile : AppCompatActivity() {
 
         val frame = LinearLayout(applicationContext)
         frame.layoutParams = ltParamsParent
+        frame.setPadding(10,10,10,10)
 
         val ltParams = LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         ltParams.width = 190
