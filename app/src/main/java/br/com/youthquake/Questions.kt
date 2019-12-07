@@ -5,8 +5,6 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import java.util.*
-import kotlin.concurrent.schedule
 import android.view.View
 import android.widget.*
 import br.com.youthquake.config.FillQuestions
