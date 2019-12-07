@@ -13,6 +13,14 @@ class User {
             field = value
         }
 
+    @SerializedName("score")
+    @Expose
+    var score:Int? = 0
+        get() = field
+        set(value) {
+            field = value
+        }
+
     @SerializedName("name")
     @Expose
     var name: String? = null

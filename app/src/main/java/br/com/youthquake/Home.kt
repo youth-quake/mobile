@@ -17,8 +17,11 @@ class Home : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        val level = intent.getIntExtra("level", 1)
+
         tvName.text = intent.getStringExtra("name")
-        tvLevel.text = getString(R.string.levelUser, intent.getIntExtra("level", 0))
+        tvLevel.text = getString(R.string.levelUser, level)
+        tvCoin.text = "Y$ ${intent.getIntExtra("score", 0)*level}"
 
         imgPerfil.setImageDrawable(getDrawable(R.mipmap.chick))
 
