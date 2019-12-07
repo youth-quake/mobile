@@ -13,9 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".UpdateIconsProfile"></activity>
         <activity android:name=".FeedbackQuizz" />
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".UpdateIconsProfile">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

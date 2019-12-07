@@ -56,7 +56,7 @@ class UpdateIconsProfile : AppCompatActivity() {
         lastImages.addView(addImage(R.mipmap.gingerbread))
 
         frame.addView(lastImages)
-        
+
         setContentView(frame)
     }
 
