@@ -45,7 +45,6 @@ class FeedbackQuizz : AppCompatActivity() {
 
         activity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
 
-        intent.removeExtra("socre")
         activity.putExtra("score", userUpdated?.score)
 
         startActivity(activity)

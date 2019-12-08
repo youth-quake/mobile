@@ -86,7 +86,7 @@ class Questions : AppCompatActivity() {
 
             currentQuestion = fillQuestion()
 
-            while(currentQuestion?.question.isNullOrBlank()){
+            while(currentQuestion?.question.isNullOrBlank() || currentQuestion?.question === previousQuestion?.question){
                 currentQuestion = fillQuestion()
             }
 
@@ -123,6 +123,8 @@ class Questions : AppCompatActivity() {
             radioSelected.setTextColor(Color.RED)
             wrong++
         }
+
+        previousQuestion = currentQuestion
     }
 
     private fun answerIsChecked():Boolean {
