@@ -25,10 +25,11 @@ class Home : AppCompatActivity() {
         setContentView(R.layout.activity_home)
 
         val level = intent.getIntExtra("level", 1)
+        val idUser = intent.getLongExtra("idUser", 0)
 
         tvName.text = intent.getStringExtra("name")
         tvLevel.text = getString(R.string.levelUser, level)
-        tvCoin.text = "YQ ${intent.getIntExtra("score", 10)*level}"
+        tvCoin.text = "YQ ${intent.getIntExtra("score", 0)}"
 
         imgProfile.setImageDrawable(getDrawable(intent.getIntExtra("pictureDraw", R.mipmap.dracula)))
 
@@ -37,7 +38,13 @@ class Home : AppCompatActivity() {
         }
 
         clQuiz.setOnClickListener{
-            goTo(Intent(this, Quizz::class.java))
+
+            val intent = Intent(this, Quizz::class.java)
+            intent.putExtra("idUser", idUser)
+            intent.putExtra("score", intent.getIntExtra("score", 0))
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+            startActivity(intent)
+            //goTo(Intent(this, Quizz::class.java))
         }
 
         clMeusAmigos.setOnClickListener{

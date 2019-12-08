@@ -11,8 +11,11 @@ class Quizz : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quizz)
 
+        val idUser = intent.getLongExtra("idUser", 0)
+
         startButton.setOnClickListener {
             val actQuestions = Intent(this, Questions::class.java)
+            actQuestions.putExtra("idUser", idUser)
             actQuestions.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(actQuestions)
         }

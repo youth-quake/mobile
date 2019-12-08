@@ -34,6 +34,7 @@ class Questions : AppCompatActivity() {
 
         txtCountQuestions.text = "Questão $counter/$countTotal"
 
+
         currentQuestion = fillQuestion()
         showQuestion()
 
@@ -102,7 +103,7 @@ class Questions : AppCompatActivity() {
         } else {
             val actResult = Intent(this, FeedbackQuizz::class.java)
             actResult.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-
+            actResult.putExtra("idUser", intent.getLongExtra("idUser", 0))
             actResult.putExtra("score", score)
             actResult.putExtra("wrong", wrong)
             actResult.putExtra("right", right)
