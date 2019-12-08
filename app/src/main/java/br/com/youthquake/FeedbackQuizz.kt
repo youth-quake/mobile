@@ -13,11 +13,13 @@ class FeedbackQuizz : AppCompatActivity() {
     private var userUpdated: User? = null
 
     private var totalScore:Int = 0
+    private var idUser:Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feedback_quizz)
 
+        idUser = intent.getLongExtra("idUser", 0)
         totalScore = intent.getIntExtra("score", 0)*valuePerPoint
 
         tvTotalPoints.text = "SEUS PONTOS: ${totalScore}"
@@ -30,24 +32,7 @@ class FeedbackQuizz : AppCompatActivity() {
         }
 
         btExit.setOnClickListener{
-            val updateScore = UserUpdate()
-            val user = User()
-            user.idUser = intent.getLongExtra("idUser", 0)
-            user.score = totalScore
-            userUpdated = updateScore.execute(user).get()
-            val activity = Intent(this, Home::class.java)
-            activity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            activity.putExtra("idUser", userUpdated?.idUser)
-            activity.putExtra("name",  userUpdated?.name)
-            activity.putExtra("login", userUpdated?.login)
-            activity.putExtra("email", userUpdated?.email)
-            activity.putExtra("password", userUpdated?.password)
-            activity.putExtra("messageStatus", userUpdated?.messageStatus)
-            activity.putExtra("level", userUpdated?.level)
-            activity.putExtra("picture", userUpdated?.picture)
-            activity.putExtra("score", userUpdated?.score)
-            startActivity(activity)
-            //updateScore(Intent(this, Home::class.java))
+            updateScore(Intent(this, Home::class.java))
         }
     }
 
@@ -55,14 +40,19 @@ class FeedbackQuizz : AppCompatActivity() {
         val updateScore = UserUpdate()
         val user = User()
 
-        user.idUser = intent.getLongExtra("idUser", 0)
+        user.idUser = idUser
         user.score = totalScore
 
         userUpdated = updateScore.execute(user).get()
 
         activity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
 
+        activity.putExtra("level", userUpdated?.level)
         activity.putExtra("score", userUpdated?.score)
+        activity.putExtra("idUser", userUpdated?.idUser)
+        activity.putExtra("picture", userUpdated?.picture!!.toInt())
+        activity.putExtra("idUser", userUpdated?.idUser)
+        activity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
 
         startActivity(activity)
     }

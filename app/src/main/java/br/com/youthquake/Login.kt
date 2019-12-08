@@ -32,7 +32,7 @@ class Login : AppCompatActivity() {
                 preferences?.getString("password", "123"),
                 preferences?.getString("messageStatus", "Construindo um futuro melhor"),
                 preferences?.getInt("level", 1),
-                preferences?.getString("picture", "${Photos.FLOAT}"),
+                preferences?.getString("picture", R.mipmap.dracula.toString()),
                 preferences?.getInt("score", 1)
             )
         }
@@ -55,7 +55,7 @@ class Login : AppCompatActivity() {
                     editPreferences?.putString("password", response.password)
                     editPreferences?.putString("messageStatus", response.messageStatus)
                     editPreferences?.putInt("level", response.level!!)
-                    editPreferences?.putString("picture", response.picture)
+                    editPreferences?.putInt("picture", response.picture!!.toInt())
                     editPreferences?.putInt("score", response.score!!)
                     editPreferences?.commit()
                 }
@@ -95,9 +95,10 @@ class Login : AppCompatActivity() {
         goHome.putExtra("password", password)
         goHome.putExtra("messageStatus", messageStatus)
         goHome.putExtra("level", level)
-        goHome.putExtra("picture", picture)
+        goHome.putExtra("picture", picture!!.toInt())
         goHome.putExtra("score", score)
         goHome.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+
         startActivity(goHome)
     }
 

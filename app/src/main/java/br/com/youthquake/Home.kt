@@ -15,36 +15,34 @@ import androidx.core.app.ComponentActivity.ExtraData
 import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 
-
-
 class Home : AppCompatActivity() {
 
+    var idUser:Long = 0
+    var level:Int = 0
+    var picture:Int = 0
+    var score:Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val level = intent.getIntExtra("level", 1)
-        val idUser = intent.getLongExtra("idUser", 0)
+        level = intent.getIntExtra("level", 1)
+        idUser = intent.getLongExtra("idUser", 0)
+        picture = intent.getIntExtra("picture", R.mipmap.dracula)
+        score = intent.getIntExtra("score", 0)
 
         tvName.text = intent.getStringExtra("name")
         tvLevel.text = getString(R.string.levelUser, level)
         tvCoin.text = "YQ ${intent.getIntExtra("score", 0)}"
 
-        imgProfile.setImageDrawable(getDrawable(intent.getIntExtra("pictureDraw", R.mipmap.dracula)))
+        imgProfile.setImageResource(picture)
 
         imgProfile.setOnClickListener{
             goTo(Intent(this, UpdateIconsProfile::class.java))
         }
 
         clQuiz.setOnClickListener{
-
-            val intent = Intent(this, Quizz::class.java)
-            intent.putExtra("idUser", idUser)
-            intent.putExtra("score", intent.getIntExtra("score", 0))
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            startActivity(intent)
-            //goTo(Intent(this, Quizz::class.java))
+            goTo(Intent(this, Quizz::class.java))
         }
 
         clMeusAmigos.setOnClickListener{
@@ -69,6 +67,10 @@ class Home : AppCompatActivity() {
     }
 
     private fun goTo(activity: Intent){
+        activity.putExtra("idUser", idUser)
+        activity.putExtra("level", level)
+        activity.putExtra("score", score)
+        activity.putExtra("picture", picture)
         activity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
         startActivity(activity)
     }
