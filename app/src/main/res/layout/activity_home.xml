@@ -9,11 +9,12 @@
     android:paddingTop="20dp">
 
     <ImageView
-        android:id="@+id/imgPerfil"
+        android:id="@+id/imgProfile"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:paddingTop="30dp"
         android:src="@mipmap/chick"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent" />
 
@@ -26,7 +27,7 @@
         android:layout_marginTop="15dp"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgPerfil" />
+        app:layout_constraintTop_toBottomOf="@id/imgProfile" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clInfo"
@@ -42,15 +43,19 @@
             android:text="Nível 20"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/infoHome" />
+            style="@style/infoHome"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/tvCoin"
-            android:text="$$ 1.000,00"
-            app:layout_constraintRight_toRightOf="parent"
+            android:text="Y$ 1.000,00"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/infoHome" />
+            style="@style/infoHome"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -64,17 +69,20 @@
         android:paddingBottom="15dp">
         <TextView
             android:id="@+id/tvQuizz"
-            android:text="Quiz"
+            android:text="@string/goToGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/fontMenu" />
+            style="@style/fontMenu"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <ImageView
             android:id="@+id/imgArrowApostas"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:src="@mipmap/arrow_right"
-            app:layout_constraintRight_toRightOf="parent" />
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -86,16 +94,18 @@
         app:layout_constraintTop_toBottomOf="@id/clQuiz"
         android:paddingTop="15dp"
         android:background="@drawable/top_border_white"
-        android:paddingBottom="15dp">
+        android:paddingBottom="15dp"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/tvMeusAmigos"
-            android:text="Ranking"
+            android:text="@string/goToRanking"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/fontMenu"
             android:paddingTop="5dp"
-            />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imgArrowAmigos"
@@ -103,7 +113,8 @@
             android:layout_height="30dp"
             android:src="@mipmap/arrow_right"
             app:layout_constraintRight_toRightOf="parent"
-            android:paddingTop="5dp"/>
+            android:paddingTop="5dp"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -117,22 +128,25 @@
         android:background="@drawable/top_border_white">
         <TextView
             android:id="@+id/tvSair"
-            android:text="Sair"
+            android:text="@string/goToLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/fontMenu" />
+            style="@style/fontMenu"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <ImageView
             android:id="@+id/imgArrowEconomias"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:src="@mipmap/arrow_right"
-            app:layout_constraintRight_toRightOf="parent" />
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/description"
-        android:text="Todos os Direitos Reservados. © 2019"
+        android:text="@string/allReserved"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/infoFooter"

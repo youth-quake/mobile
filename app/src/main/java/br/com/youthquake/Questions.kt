@@ -5,8 +5,6 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import java.util.*
-import kotlin.concurrent.schedule
 import android.view.View
 import android.widget.*
 import br.com.youthquake.config.FillQuestions
@@ -18,7 +16,10 @@ class Questions : AppCompatActivity() {
     private val totalQuestions = 5
 
     private var counter: Int = 1
+
+    private var previousQuestion: Question? = null
     private var currentQuestion: Question? = null
+
     private var countTotal: Int = 5
 
     private var score: Int = 0
@@ -32,6 +33,7 @@ class Questions : AppCompatActivity() {
         setContentView(R.layout.activity_questions)
 
         txtCountQuestions.text = "Questão $counter/$countTotal"
+
 
         currentQuestion = fillQuestion()
         showQuestion()
@@ -85,7 +87,7 @@ class Questions : AppCompatActivity() {
 
             currentQuestion = fillQuestion()
 
-            while(currentQuestion?.question.isNullOrBlank()){
+            while(currentQuestion?.question.isNullOrBlank() || currentQuestion?.question === previousQuestion?.question){
                 currentQuestion = fillQuestion()
             }
 
@@ -101,7 +103,7 @@ class Questions : AppCompatActivity() {
         } else {
             val actResult = Intent(this, FeedbackQuizz::class.java)
             actResult.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-
+            actResult.putExtra("idUser", intent.getLongExtra("idUser", 0))
             actResult.putExtra("score", score)
             actResult.putExtra("wrong", wrong)
             actResult.putExtra("right", right)
@@ -122,6 +124,8 @@ class Questions : AppCompatActivity() {
             radioSelected.setTextColor(Color.RED)
             wrong++
         }
+
+        previousQuestion = currentQuestion
     }
 
     private fun answerIsChecked():Boolean {

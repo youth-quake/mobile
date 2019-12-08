@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <string name="title">Selecione um avatar:</string>
+
     <!--Main-->
     <string name="titleMain">Revolutionize in the financial market</string>
     <string name="buttonCreate">Create an account</string>
@@ -48,4 +51,9 @@
     <!--Sair-->
     <string name="pressBackToFinish">Press back to finish</string>
 
+    <!--Home menu-->
+    <string name="goToGame">Quizz</string>
+    <string name="goToRanking">Ranking</string>
+    <string name="goToLogin">Exit</string>
+    <string name="allReserved">Todos os Direitos Reservados © 2019</string>
 </resources>
