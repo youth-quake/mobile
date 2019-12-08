@@ -15,7 +15,8 @@ import kotlinx.android.synthetic.main.activity_login.*
 class Ranking : AppCompatActivity() {
 
     private val totalFriends = 10
-    private var friend: Friends? = null
+    private var friend: List<Friends>? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,12 +31,13 @@ class Ranking : AppCompatActivity() {
         showFriends()
     }
 
-    private fun fillFriends(): Friends? {
+    private fun fillFriends(): List<Friends>? {
         val fillFriends = FillFriends()
-        val modelFriends: Friends? = fillFriends.execute((0..totalFriends).shuffled().last().toInt()).get()
+        val modelFriends: List<Friends>? = fillFriends.execute(
+            intent.getLongExtra("idUser", 0).toInt()).get()
 
-        modelFriends?.user1
-        modelFriends?.user2
+        //modelFriends?.user1
+        //modelFriends?.user2
 
         return modelFriends
     }
@@ -43,9 +45,9 @@ class Ranking : AppCompatActivity() {
     private fun showFriends(){
         friend = fillFriends()
 
-        name.text = friend?.user1?.name
-        tvLevel.text = friend?.user1?.level.toString()
-        tvCoin.text = friend?.user1?.score.toString()
+        //name.text = friend?.user1?.name
+        //tvLevel.text = friend?.user1?.level.toString()
+        //tvCoin.text = friend?.user1?.score.toString()
     }
 
 }

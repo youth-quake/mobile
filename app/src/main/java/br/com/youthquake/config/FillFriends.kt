@@ -7,8 +7,8 @@ import br.com.youthquake.service.FillFriendsService
 import feign.Feign
 import feign.jackson.JacksonDecoder
 
-class FillFriends  : AsyncTask<Int, Void, Friends>() {
-    override fun doInBackground(vararg params: Int?): Friends? {
+class FillFriends  : AsyncTask<Int, Void, List<Friends>>() {
+    override fun doInBackground(vararg params: Int?): List<Friends>? {
         val request = Feign.builder()
             .decoder(JacksonDecoder())
             .target(
@@ -19,7 +19,8 @@ class FillFriends  : AsyncTask<Int, Void, Friends>() {
         try {
             return request.getFriends(params[0]!!)
         } catch (e:Exception) {
-            return null
+            e.printStackTrace()
         }
+        return null
     }
 }

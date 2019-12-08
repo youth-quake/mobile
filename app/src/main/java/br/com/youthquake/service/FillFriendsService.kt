@@ -6,5 +6,5 @@ import feign.RequestLine
 
 interface FillFriendsService {
     @RequestLine("GET friend/{idUser}")
-    fun getFriends(@Param("idUser") id: Int): Friends?
+    fun getFriends(@Param("idUser") idUser: Int): List<Friends>?
 }
