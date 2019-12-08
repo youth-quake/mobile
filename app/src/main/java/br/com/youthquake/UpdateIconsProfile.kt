@@ -89,8 +89,6 @@ class UpdateIconsProfile : AppCompatActivity() {
 
             userUpdated = updateScore.execute(user).get()
 
-            Intent(this, Home::class.java).putExtra("pictureDraw", user.picture)
-
             delayAfterClickImage.postDelayed({ goTo(Intent(this, Home::class.java)) }, 1000)
         }
 
@@ -114,6 +112,11 @@ class UpdateIconsProfile : AppCompatActivity() {
     }
 
     private fun goTo(activity: Intent){
+        activity.putExtra("level", userUpdated?.level)
+        activity.putExtra("score", userUpdated?.score)
+        activity.putExtra("idUser", userUpdated?.idUser)
+        activity.putExtra("picture", userUpdated?.picture!!.toInt())
+        activity.putExtra("idUser", userUpdated?.idUser)
         activity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
         startActivity(activity)
     }
