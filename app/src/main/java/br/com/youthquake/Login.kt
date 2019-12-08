@@ -32,7 +32,7 @@ class Login : AppCompatActivity() {
                 preferences?.getString("password", "123"),
                 preferences?.getString("messageStatus", "Construindo um futuro melhor"),
                 preferences?.getInt("level", 1),
-                preferences?.getString("picture", R.mipmap.dracula.toString()),
+                preferences?.getInt("picture", R.mipmap.dracula),
                 preferences?.getInt("score", 1)
             )
         }
@@ -68,7 +68,7 @@ class Login : AppCompatActivity() {
                     response.password,
                     response.messageStatus,
                     response.level,
-                    response.picture,
+                    response.picture!!.toInt(),
                     response.score
                 )
             } else rejectedAccess()
@@ -83,7 +83,7 @@ class Login : AppCompatActivity() {
         password:String?,
         messageStatus:String?,
         level:Int?,
-        picture:String?,
+        picture:Int?,
         score:Int?
     ){
         val goHome = Intent(this, Home::class.java)
