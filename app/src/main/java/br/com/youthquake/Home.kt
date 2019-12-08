@@ -5,15 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_home.*
-import android.R.id.edit
 import android.content.Context
-import android.text.method.TextKeyListener.clear
-import android.content.Context.MODE_PRIVATE
-import android.content.SharedPreferences
-import androidx.core.app.ComponentActivity
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 
 class Home : AppCompatActivity() {
 
@@ -46,7 +38,7 @@ class Home : AppCompatActivity() {
         }
 
         clMeusAmigos.setOnClickListener{
-            goTo(Intent(this, Friends::class.java))
+            goTo(Intent(this, Ranking::class.java))
         }
 
         clSair.setOnClickListener{

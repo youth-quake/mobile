@@ -17,10 +17,10 @@
         <activity android:name=".FeedbackQuizz" />
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
         <activity android:name=".Register" />
         <activity android:name=".Login" />
@@ -28,7 +28,9 @@
         <activity android:name=".Home" />
         <activity android:name=".Quizz" />
         <activity android:name=".Questions" />
-        <activity android:name=".Friends" />
+        <activity android:name=".Ranking" >
+
+        </activity>
         <activity android:name=".Movements" />
         <activity android:name=".Bet" />
     </application>
