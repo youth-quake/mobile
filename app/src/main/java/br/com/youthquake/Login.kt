@@ -98,7 +98,7 @@ class Login : AppCompatActivity() {
         goHome.putExtra("picture", picture!!.toInt())
         goHome.putExtra("score", score)
         goHome.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-        
+
         startActivity(goHome)
     }
 
