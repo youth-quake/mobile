@@ -30,13 +30,7 @@ class Home : AppCompatActivity() {
         tvLevel.text = getString(R.string.levelUser, level)
         tvCoin.text = "YQ ${intent.getIntExtra("score", 10)*level}"
 
-
-        println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-        println(getDrawable(intent.getIntExtra("pictureDraw", R.mipmap.cockatoo)))
-        println(getDrawable(intent.getIntExtra("pictureDraw", R.mipmap.cockatoo)))
-        println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
-
-        imgProfile.setImageDrawable(getDrawable(intent.getIntExtra("pictureDraw", 0)))
+        imgProfile.setImageDrawable(getDrawable(intent.getIntExtra("pictureDraw", R.mipmap.dracula)))
 
         imgProfile.setOnClickListener{
             goTo(Intent(this, UpdateIconsProfile::class.java))

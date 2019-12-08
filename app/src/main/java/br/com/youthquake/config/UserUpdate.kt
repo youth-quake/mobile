@@ -7,7 +7,7 @@ import feign.Feign
 import feign.jackson.JacksonDecoder
 import feign.jackson.JacksonEncoder
 
-class UserUpdate: AsyncTask<User, Void, User?>() {
+class UserUpdate: AsyncTask<User, Void, User>() {
     override fun doInBackground(vararg parameters: User?): User? {
         val request = Feign.builder()
             .encoder(JacksonEncoder())
@@ -17,7 +17,7 @@ class UserUpdate: AsyncTask<User, Void, User?>() {
                 "http://52.202.202.227:8081/"
             )
         try {
-            return request.loginUser(parameters[0]!!)
+            return request.updateUser(parameters[0]!!)
         }catch (e:Exception){
             e.printStackTrace()
         }

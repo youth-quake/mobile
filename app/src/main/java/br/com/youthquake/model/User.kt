@@ -61,7 +61,7 @@ class User {
             field = value
         }
 
-    @SerializedName("path_picture")
+    @SerializedName("picture")
     @Expose
     var picture: String? = null
         get() = field
