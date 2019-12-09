@@ -7,13 +7,13 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.Gravity
 import android.view.ViewGroup
-import android.view.animation.AlphaAnimation
 import android.widget.GridLayout
 import android.widget.ImageView
 import android.widget.LinearLayout.LayoutParams
 import br.com.youthquake.config.UserUpdate
 import br.com.youthquake.model.User
 import com.github.siyamed.shapeimageview.CircularImageView
+import kotlinx.android.synthetic.main.activity_friends.*
 
 class UpdateIconsProfile : AppCompatActivity() {
 
@@ -24,9 +24,25 @@ class UpdateIconsProfile : AppCompatActivity() {
     private val marginPerComponent = 25
     private val sizeImage = 150
 
+    var idUser:Long = 0
+    var level:Int = 0
+    var picture:Int = 0
+    var score:Int = 0
+    var name:String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_icons_profile)
+
+        level = intent.getIntExtra("level", 1)
+        idUser = intent.getLongExtra("idUser", 0)
+        picture = intent.getIntExtra("picture", R.mipmap.dracula)
+        score = intent.getIntExtra("score", 0)
+        name = intent.getStringExtra("name")
+
+        imgArrow.setOnClickListener{
+            goTo(Intent(this, Home::class.java))
+        }
 
         val frame = GridLayout(applicationContext)
 
@@ -90,6 +106,7 @@ class UpdateIconsProfile : AppCompatActivity() {
             user.picture = pathImage.toString()
 
             userUpdated = updateScore.execute(user).get()
+            picture = userUpdated?.picture!!.toInt()
 
             delayAfterClickImage.postDelayed({ goTo(Intent(this, Home::class.java)) }, 300)
         }
@@ -114,12 +131,11 @@ class UpdateIconsProfile : AppCompatActivity() {
     }
 
     private fun goTo(activity: Intent){
-        activity.putExtra("name", userUpdated?.name)
-        activity.putExtra("level", userUpdated?.level)
-        activity.putExtra("score", userUpdated?.score)
-        activity.putExtra("idUser", userUpdated?.idUser)
-        activity.putExtra("picture", userUpdated?.picture!!.toInt())
-        activity.putExtra("idUser", userUpdated?.idUser)
+        activity.putExtra("name", name)
+        activity.putExtra("level",level)
+        activity.putExtra("score", score)
+        activity.putExtra("idUser", idUser)
+        activity.putExtra("picture", picture)
         activity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
         startActivity(activity)
     }
