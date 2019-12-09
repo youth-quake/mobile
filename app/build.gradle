@@ -44,4 +44,5 @@ dependencies {
     implementation 'io.github.openfeign:feign-gson:9.5.1'
 
     implementation 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
+    implementation 'com.andkulikov:transitionseverywhere:2.1.0-rc01'
 }

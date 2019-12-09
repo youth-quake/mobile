@@ -9,43 +9,47 @@
 
     <ImageView
         android:id="@+id/imgArrow"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:paddingLeft="10dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:src="@mipmap/arrow"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ranking"
-        android:textSize="30dp"
+        android:text="Lista de amigos"
+        android:textSize="22dp"
         android:textStyle="bold"
         app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintRight_toLeftOf="parent" />
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"
+        android:id="@+id/title"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/amigo1"
-        android:layout_width="340dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="35dp"
         android:background="@drawable/btn_roxo_forma"
         android:padding="10dp"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imgArrow">
-
+        app:layout_constraintTop_toBottomOf="@id/title">
 
         <ImageView
             android:id="@+id/imgPerfil"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginTop="50dp"
             android:src="@mipmap/chick" />
 
         <TextView
             android:id="@+id/name"
-            style="@style/titleHome"
+            style="@style/titleFriends"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -54,37 +58,22 @@
             android:textStyle="bold"
             app:layout_constraintLeft_toRightOf="@id/imgPerfil" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clPontuacao1"
-            android:layout_width="180dp"
-            android:paddingLeft="30dp"
-            android:paddingTop="10dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/name">
-
             <TextView
-                android:id="@+id/tvLevel1"
-                android:text="Nível 35"
+                android:id="@+id/tvLevel"
+                android:text="Nível 28"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/infoHome" />
-
-            <TextView
-                android:id="@+id/tvCoin1"
-                android:text="$$ 2.350,00"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/infoHome" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                style="@style/bodyFriends"
+                android:paddingTop="5dp"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintTop_toBottomOf="@id/name"
+                app:layout_constraintLeft_toRightOf="@id/imgPerfil" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/amigo2"
-        android:layout_width="340dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:background="@drawable/btn_roxo_forma"
@@ -94,54 +83,37 @@
         app:layout_constraintTop_toBottomOf="@id/amigo1">
 
         <ImageView
-            android:id="@+id/imgPerfil"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:id="@+id/imgPerfil_1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginTop="50dp"
-            android:src="@mipmap/cockatoo" />
+            android:src="@mipmap/alessandra" />
 
         <TextView
-            android:id="@+id/name"
-            style="@style/titleHome"
+            android:id="@+id/name_1"
+            style="@style/titleFriends"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:text="Alessandra "
-            android:textColor="@color/whiteTheme"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toRightOf="@id/imgPerfil" />
+            app:layout_constraintLeft_toRightOf="@id/imgPerfil_1" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clPontuacao2"
-            android:layout_width="180dp"
-            android:paddingLeft="30dp"
-            android:paddingTop="10dp"
+        <TextView
+            android:id="@+id/tvLevel_1"
+            android:text="Nível 23"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/name">
-
-            <TextView
-                android:id="@+id/tvLevel2"
-                android:text="Nível 25"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/infoHome" />
-
-            <TextView
-                android:id="@+id/tvCoin2"
-                android:text="$$ 1.250,00"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/infoHome" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            style="@style/bodyFriends"
+            android:paddingTop="5dp"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintTop_toBottomOf="@id/name_1"
+            app:layout_constraintLeft_toRightOf="@id/imgPerfil_1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/amigo3"
-        android:layout_width="340dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:background="@drawable/btn_roxo_forma"
@@ -152,54 +124,36 @@
 
 
         <ImageView
-            android:id="@+id/imgPerfil"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:id="@+id/imgPerfil_2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginTop="50dp"
             android:src="@mipmap/siberianhusky" />
 
         <TextView
-            android:id="@+id/name"
-            style="@style/titleHome"
+            android:id="@+id/name_2"
+            style="@style/titleFriends"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:text="Thiago Paz"
-            android:textColor="@color/whiteTheme"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toRightOf="@id/imgPerfil" />
+            app:layout_constraintLeft_toRightOf="@id/imgPerfil_2" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clPontuacao3"
-            android:layout_width="180dp"
-            android:paddingLeft="30dp"
-            android:paddingTop="10dp"
+        <TextView
+            android:id="@+id/tvLevel_2"
+            android:text="Nível 21"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/name">
-
-            <TextView
-                android:id="@+id/tvLevel3"
-                android:text="Nível 12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/infoHome" />
-
-            <TextView
-                android:id="@+id/tvCoin3"
-                android:text="$$ 825,00"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/infoHome" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
+            style="@style/bodyFriends"
+            android:paddingTop="10dp"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintTop_toBottomOf="@id/name_2"
+            app:layout_constraintLeft_toRightOf="@id/imgPerfil_2" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/amigo5"
-        android:layout_width="340dp"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:background="@drawable/btn_roxo_forma"
@@ -208,64 +162,74 @@
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/amigo3">
 
-
         <ImageView
-            android:id="@+id/imgPerfil"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:id="@+id/imgPerfil_3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginTop="50dp"
-            android:src="@mipmap/ghost" />
+            android:src="@mipmap/soccer" />
 
         <TextView
-            android:id="@+id/name"
-            style="@style/titleHome"
+            android:id="@+id/name_3"
+            style="@style/titleFriends"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:text="Kevin "
-            android:textColor="@color/whiteTheme"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toRightOf="@id/imgPerfil" />
+            android:text="Keven"
+            app:layout_constraintLeft_toRightOf="@id/imgPerfil_3" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/clPontuacao4"
-            android:layout_width="180dp"
-            android:paddingLeft="30dp"
-            android:paddingTop="10dp"
+        <TextView
+            android:id="@+id/tvLevel_3"
+            android:text="Nível 17"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/name">
-
-            <TextView
-                android:id="@+id/tvLevel4"
-                android:text="Nível 11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/infoHome" />
-
-            <TextView
-                android:id="@+id/tvCoin4"
-                android:text="$$ 625,00"
-                app:layout_constraintRight_toRightOf="parent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/infoHome" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            style="@style/bodyFriends"
+            android:paddingTop="10dp"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintTop_toBottomOf="@id/name_3"
+            app:layout_constraintLeft_toRightOf="@id/imgPerfil_3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="50dp"
-        android:layout_height="70dp"
-        android:layout_margin="5dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        android:id="@+id/amigo6"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/btn_roxo_forma"
+        android:padding="10dp"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/amigo5">
 
         <ImageView
+            android:id="@+id/imgPerfil_4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="50dp"
+            android:src="@mipmap/volpe" />
+
+        <TextView
+            android:id="@+id/name_4"
+            style="@style/titleFriends"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/arrow_green" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_marginLeft="20dp"
+            android:text="Volpe"
+            android:textColor="@color/whiteTheme"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/imgPerfil_4" />
 
+        <TextView
+            android:id="@+id/tvLevel1"
+            android:text="Nível 15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/bodyFriends"
+            android:layout_marginLeft="20dp"
+            android:paddingTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/name_4"
+            app:layout_constraintLeft_toRightOf="@id/imgPerfil_4" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

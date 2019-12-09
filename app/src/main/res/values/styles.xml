@@ -50,6 +50,39 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="titleFriends">
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_width">300dp</item>
+        <item name="android:textColor">@color/whiteTheme</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="bodyFriends">
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_width">300dp</item>
+        <item name="android:textColor">@color/whiteTheme</item>
+    </style>
+
+    <style name="titleWhiteQuizz">
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:textSize">26dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/whiteTheme</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="subtitleWhiteQuizz">
+        <item name="android:fontFamily">Roboto</item>
+        <item name="android:width">210dp</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/whiteTheme</item>
+    </style>
+
     <!--QUIZZ-->
     <style name="titleFeedbackQuizz">
         <item name="android:fontFamily">Roboto</item>

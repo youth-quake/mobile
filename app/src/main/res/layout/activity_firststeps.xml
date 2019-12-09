@@ -39,13 +39,48 @@
         android:id="@+id/lbSubTitle"
         android:layout_marginTop="30dp" />
 
+    <GridLayout
+        android:id="@+id/countSteps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/lbSubTitle"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent">
+        <ImageView
+            android:id="@+id/imgStStep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="15dp"
+            android:minHeight="15dp"
+            android:layout_margin="10dp"
+            android:src="@mipmap/in"/>
+        <ImageView
+            android:id="@+id/imgNdStep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/out"
+            android:minWidth="15dp"
+            android:minHeight="15dp"
+            android:layout_margin="10dp"/>
+        <ImageView
+            android:id="@+id/imgRdStep"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/out"
+            android:minWidth="15dp"
+            android:minHeight="15dp"
+            android:layout_margin="10dp" />
+    </GridLayout>
+
     <Button
         android:id="@+id/btNext"
         style="@style/btnBranco"
         android:layout_width="250dp"
         android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/lbSubTitle"
+        app:layout_constraintTop_toBottomOf="@id/countSteps"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         android:text="@string/buttonUnderstand"
