@@ -5,33 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".UpdateIconsProfile"
-    android:paddingTop="20dp">
+    tools:context=".UpdateIconsProfile">
 
-    <ImageView
-        android:id="@+id/imgArrow"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:src="@mipmap/backarrow"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="20dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
+    <GridLayout
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Selecione um avatar:"
+        android:id="@+id/header"
+        android:elevation="@android:dimen/thumbnail_height"
         app:layout_constraintTop_toTopOf="parent"
+        android:paddingTop="30dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="20dp"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/imgArrow"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/backarrow"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selecione um avatar:"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            android:layout_gravity="center_horizontal"
+            android:paddingRight="30dp"
+            android:id="@+id/iconsTitle"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="@color/whiteTheme"
+            style="@style/titleHome" />
+
+    </GridLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scroll"
+        app:layout_constraintTop_toBottomOf="@id/header"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
-        android:id="@+id/iconsTitle"
-        android:padding="10dp"
-        android:layout_margin="10dp"
-        android:textSize="22dp"
-        android:textStyle="bold"
-        android:textColor="@color/whiteTheme"
-        style="@style/titleHome"
-        app:layout_constraintTop_toBottomOf="parent"/>
+        android:paddingBottom="10dp"
+        android:orientation="vertical" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

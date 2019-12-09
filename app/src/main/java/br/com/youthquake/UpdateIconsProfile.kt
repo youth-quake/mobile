@@ -10,10 +10,15 @@ import android.view.ViewGroup
 import android.widget.GridLayout
 import android.widget.ImageView
 import android.widget.LinearLayout.LayoutParams
+import android.widget.Toast
 import br.com.youthquake.config.UserUpdate
+import br.com.youthquake.model.Icon
+import br.com.youthquake.model.Icons
 import br.com.youthquake.model.User
 import com.github.siyamed.shapeimageview.CircularImageView
 import kotlinx.android.synthetic.main.activity_friends.*
+import kotlinx.android.synthetic.main.activity_friends.imgArrow
+import kotlinx.android.synthetic.main.activity_update_icons_profile.*
 
 class UpdateIconsProfile : AppCompatActivity() {
 
@@ -36,7 +41,7 @@ class UpdateIconsProfile : AppCompatActivity() {
 
         level = intent.getIntExtra("level", 1)
         idUser = intent.getLongExtra("idUser", 0)
-        picture = intent.getIntExtra("picture", R.mipmap.dracula)
+        picture = intent.getIntExtra("picture", Icons.DRACULA.icon.icon)
         score = intent.getIntExtra("score", 0)
         name = intent.getStringExtra("name")
 
@@ -46,41 +51,47 @@ class UpdateIconsProfile : AppCompatActivity() {
 
         val frame = GridLayout(applicationContext)
 
-        val ltParams = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
-        ltParams.setMargins(50,200,50,0)
+        val ltParams = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT)
+        ltParams.setMargins(50,200,50,5)
 
         frame.layoutParams = ltParams
         frame.orientation = GridLayout.HORIZONTAL
         frame.columnCount = 3
         frame.background = getDrawable(R.color.colorPrimary)
 
-        createFrameWithImages(
-            arrayListOf(
-                R.mipmap.skeleton,
-                R.mipmap.rainbow,
-                R.mipmap.cockatoo,
-                R.mipmap.volpe,
-                R.mipmap.bird,
-                R.mipmap.akali,
-                R.mipmap.alessandra,
-                R.mipmap.dracula,
-                R.mipmap.flamingo,
-                R.mipmap.ghost,
-                R.mipmap.gingerbread,
-                R.mipmap.pride,
-                R.mipmap.chick,
-                R.mipmap.cat,
-                R.mipmap.shen,
-                R.mipmap.soccer,
-                R.mipmap.apple,
-                R.mipmap.acoustic,
-                R.mipmap.turtle
-            ), frame)
+        createFrameWithImages(arrayListOf(
+            Icons.RAINBOW.icon,
+            Icons.COCKATOO.icon,
+            Icons.FLOAT.icon,
+            Icons.BIRD.icon,
+            Icons.AKALI.icon,
+            Icons.ALESSANDRA.icon,
+            Icons.DRACULA.icon,
+            Icons.FLAMINGO.icon,
+            Icons.GHOST.icon,
+            Icons.GINGERBREAD.icon,
+            Icons.PRIDE.icon,
+            Icons.CHICK.icon,
+            Icons.CAT.icon,
+            Icons.SHEN.icon,
+            Icons.SOCCER.icon,
+            Icons.APPLE.icon,
+            Icons.ACCOUSTIC.icon,
+            Icons.TURTLE.icon,
+            Icons.GUITAR.icon,
+            Icons.GINGERBREAD.icon,
+            Icons.SKELETON.icon,
+            Icons.HUSKY.icon,
+            Icons.PACMAN.icon,
+            Icons.BASKETBALL.icon,
+            Icons.BASKETPLAYER.icon,
+            Icons.HUSKY.icon
+        ), frame)
 
-        addContentView(frame, ltParams)
+        scroll.addView(frame, ltParams)
     }
 
-    private fun addImage(pathImage:Int, id:Int) : ImageView{
+    private fun addImage(img:Icon) : ImageView{
         val ltParams = LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
 
         ltParams.width = sizeImage
@@ -90,41 +101,46 @@ class UpdateIconsProfile : AppCompatActivity() {
 
         var image = CircularImageView(applicationContext)
         image.layoutParams = ltParams
-        image.setImageResource(pathImage)
+
+        var pathIcon = 0
+
+        if(score < img.necessaryPoints){
+            pathIcon = img.disabledIcon
+
+            image.setOnClickListener{
+                Toast.makeText(this, "Esse ícone está bloqueado, ganhe pontos para liberar!", Toast.LENGTH_LONG).show()
+            }
+        }else{
+            pathIcon = img.icon
+
+            image.setOnClickListener{
+
+                image.setBorderColor(Color.GREEN)
+
+                val updateScore = UserUpdate()
+                val user = User()
+
+                user.idUser = intent.getLongExtra("idUser", 0)
+                user.picture = pathIcon.toString()
+
+                userUpdated = updateScore.execute(user).get()
+                picture = userUpdated?.picture!!.toInt()
+
+                delayAfterClickImage.postDelayed({ goTo(Intent(this, Home::class.java)) }, 300)
+            }
+        }
+
+        image.setImageResource(pathIcon)
         image.borderWidth = 6
         image.setBorderColor(Color.TRANSPARENT)
-        image.id = id
-
-        image.setOnClickListener{
-
-            image.setBorderColor(Color.GREEN)
-
-            val updateScore = UserUpdate()
-            val user = User()
-
-            user.idUser = intent.getLongExtra("idUser", 0)
-            user.picture = pathImage.toString()
-
-            userUpdated = updateScore.execute(user).get()
-            picture = userUpdated?.picture!!.toInt()
-
-            delayAfterClickImage.postDelayed({ goTo(Intent(this, Home::class.java)) }, 300)
-        }
+        image.id = img.id
 
         return image
     }
 
-    private fun createFrameWithImages(totalImagesWithPaths:ArrayList<Int>, frame:GridLayout):GridLayout {
-
-        val ltParams = LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        ltParams.width = sizeImage
-        ltParams.height = sizeImage
-
-        var id = 0
-
+    private fun createFrameWithImages(totalImagesWithPaths:ArrayList<Icon>, frame:GridLayout):GridLayout {
         totalImagesWithPaths.forEach{img ->
-            frame.addView(addImage(img, id))
-            id++
+            frame.addView(addImage(img))
         }
 
         return  frame

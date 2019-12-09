@@ -40,8 +40,9 @@ class Login : AppCompatActivity() {
                 preferences?.getString("password", "123"),
                 preferences?.getString("messageStatus", "Construindo um futuro melhor"),
                 preferences?.getInt("level", 1),
-                preferences?.getInt("picture", R.mipmap.dracula),
-                preferences?.getInt("score", 1)
+                preferences?.getInt("picture", R.mipmap.volpe),
+                preferences?.getInt("score", 1),
+                preferences?.getInt("firstAccess", 1)
             )
         }
 
@@ -49,10 +50,6 @@ class Login : AppCompatActivity() {
 
             animation.duration = 1000
             it.startAnimation(animation)
-
-            val anim = AnimationUtils.loadAnimation(this, R.anim.button_animation)
-            btLogin.animation = anim
-            btLogin.startAnimation(anim)
 
             val user = User()
             user.login = etUsername.text.toString()
@@ -62,6 +59,7 @@ class Login : AppCompatActivity() {
             val response: User? = call.execute(user).get()
 
             if(response != null){
+
                 if(remember.isChecked){
                     editPreferences?.putBoolean("remember", true)
                     editPreferences?.putLong("idUser", response.idUser!!)
@@ -73,6 +71,7 @@ class Login : AppCompatActivity() {
                     editPreferences?.putInt("level", response.level!!)
                     editPreferences?.putInt("picture", response.picture!!.toInt())
                     editPreferences?.putInt("score", response.score!!)
+                    editPreferences?.putInt("firstAccess", response.firstAcess!!)
                     editPreferences?.commit()
                 }
 
@@ -85,9 +84,12 @@ class Login : AppCompatActivity() {
                     response.messageStatus,
                     response.level,
                     response.picture!!.toInt(),
-                    response.score
+                    response.score,
+                    response.firstAcess
                 )
-            } else rejectedAccess()
+            } else {
+                rejectedAccess()
+            }
         }
     }
 
@@ -100,22 +102,28 @@ class Login : AppCompatActivity() {
         messageStatus:String?,
         level:Int?,
         picture:Int?,
-        score:Int?
+        score:Int?,
+        firstAccess:Int?
     ){
-        val goHome = Intent(this, Home::class.java)
+        val intent = if(firstAccess === 0){
+            Intent(this, Home::class.java)
+        }else{
+            Intent(this, FirstSteps::class.java)
+        }
 
-        goHome.putExtra("idUser", idUser)
-        goHome.putExtra("name",  name)
-        goHome.putExtra("login", login)
-        goHome.putExtra("email", email)
-        goHome.putExtra("password", password)
-        goHome.putExtra("messageStatus", messageStatus)
-        goHome.putExtra("level", level)
-        goHome.putExtra("picture", picture!!.toInt())
-        goHome.putExtra("score", score)
-        goHome.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+        intent.putExtra("idUser", idUser)
+        intent.putExtra("name",  name)
+        intent.putExtra("login", login)
+        intent.putExtra("email", email)
+        intent.putExtra("password", password)
+        intent.putExtra("messageStatus", messageStatus)
+        intent.putExtra("level", level)
+        intent.putExtra("picture", picture!!.toInt())
+        intent.putExtra("score", score)
 
-        startActivity(goHome)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+
+        startActivity(intent)
     }
 
     private fun rejectedAccess(){
@@ -129,5 +137,19 @@ class Login : AppCompatActivity() {
 
     override fun onBackPressed() {
         goTo(Intent(this, MainActivity::class.java))
+    }
+
+    private fun clearData(){
+        val settings = getSharedPreferences("app-alert", Context.MODE_PRIVATE)
+        settings.edit().clear().commit()
+
+        intent.removeExtra("idUser")
+        intent.removeExtra("level")
+        intent.removeExtra("name")
+        intent.removeExtra("login")
+        intent.removeExtra("email")
+        intent.removeExtra("password")
+        intent.removeExtra("score")
+        intent.removeExtra("messageStatus")
     }
 }

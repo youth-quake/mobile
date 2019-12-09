@@ -21,6 +21,15 @@ class User {
             field = value
         }
 
+    @SerializedName("firstAccess")
+    @Expose
+    var firstAcess:Int? = 0
+        get() = field
+        set(value) {
+            field = value
+        }
+
+
     @SerializedName("name")
     @Expose
     var name: String? = null
