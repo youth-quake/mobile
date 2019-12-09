@@ -63,27 +63,40 @@ class UpdateIconsProfile : AppCompatActivity() {
             Icons.RAINBOW.icon,
             Icons.COCKATOO.icon,
             Icons.FLOAT.icon,
+
             Icons.BIRD.icon,
             Icons.AKALI.icon,
             Icons.BASKETPLAYER.icon,
+
             Icons.ALESSANDRA.icon,
             Icons.DRACULA.icon,
             Icons.FLAMINGO.icon,
+
             Icons.GHOST.icon,
             Icons.COIN.icon,
             Icons.GINGERBREAD.icon,
+
             Icons.PRIDE.icon,
             Icons.CHICK.icon,
             Icons.CAT.icon,
+
             Icons.SHEN.icon,
             Icons.SOCCER.icon,
             Icons.APPLE.icon,
+
             Icons.ACCOUSTIC.icon,
             Icons.TURTLE.icon,
             Icons.GUITAR.icon,
+
             Icons.GINGERBREAD.icon,
             Icons.SKELETON.icon,
             Icons.HUSKY.icon,
+
+            Icons.PACMAN.icon,
+            Icons.BASKETBALL.icon,
+            Icons.ALGORITHM.icon,
+
+
             Icons.PACMAN.icon,
             Icons.BASKETBALL.icon,
             Icons.ALGORITHM.icon
