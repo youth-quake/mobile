@@ -35,15 +35,16 @@ class FeedbackQuizz : AppCompatActivity() {
         name = intent.getStringExtra("name")
         idUser = intent.getLongExtra("idUser", 0)
 
+        totalScore = intent.getIntExtra("scoreOnQuizz", 0)
+
         if(totalScore <= 2){
             tvCongratulations.text = "Você está no caminho, mas precisa estudar mais!"
-        }else{
+        }
+        if(totalScore > 3){
             tvCongratulations.text  = "Parabéns! Você está indo muito bem nos estudos!"
         }
 
-        totalScore = intent.getIntExtra("scoreOnQuizz", 0)*valuePerPoint
-
-        tvTotalPoints.text = "PONTOS GANHOS: ${totalScore}"
+        tvTotalPoints.text = "PONTOS GANHOS: ${totalScore*valuePerPoint}"
 
         tvWrongPoints.text = "${intent.getIntExtra("wrong", 0)}"
         tvRightPoints.text = "${intent.getIntExtra("right", 0)}"
