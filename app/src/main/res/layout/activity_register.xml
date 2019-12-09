@@ -7,6 +7,14 @@
     android:background="@mipmap/retangle"
     tools:context=".Register">
 
+    <ImageView
+        android:id="@+id/imgArrow"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="15dp"
+        android:src="@mipmap/arrow" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
