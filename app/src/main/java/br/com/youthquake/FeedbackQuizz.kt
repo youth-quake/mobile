@@ -18,14 +18,24 @@ class FeedbackQuizz : AppCompatActivity() {
 
     private val animation = AlphaAnimation(0.2f, 1.0f)
 
+    var level:Int = 0
+    var picture:Int = 0
+    var score:Int = 0
+    var name:String = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feedback_quizz)
 
         animation.duration = 400
 
+        level = intent.getIntExtra("level", 1)
+        picture = intent.getIntExtra("picture", R.mipmap.dracula)
+        score = intent.getIntExtra("score", 0)
+        name = intent.getStringExtra("name")
         idUser = intent.getLongExtra("idUser", 0)
-        totalScore = intent.getIntExtra("score", 0)*valuePerPoint
+
+        totalScore = intent.getIntExtra("scoreOnQuizz", 0)*valuePerPoint
 
         tvTotalPoints.text = "PONTOS GANHOS: ${totalScore}"
 
@@ -54,17 +64,17 @@ class FeedbackQuizz : AppCompatActivity() {
         val user = User()
 
         user.idUser = idUser
-        user.score = totalScore
+        user.score = totalScore+intent.getIntExtra("score", 0)
 
         userUpdated = updateScore.execute(user).get()
 
         activity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
 
-        activity.putExtra("name", userUpdated?.level)
+        activity.putExtra("level", userUpdated?.level)
+        activity.putExtra("name", name)
         activity.putExtra("score", userUpdated?.score)
-        activity.putExtra("idUser", userUpdated?.idUser)
-        activity.putExtra("picture", userUpdated?.picture!!.toInt())
-        activity.putExtra("idUser", userUpdated?.idUser)
+        activity.putExtra("picture", picture)
+        activity.putExtra("idUser", idUser)
         activity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
 
         startActivity(activity)

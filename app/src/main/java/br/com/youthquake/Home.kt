@@ -62,6 +62,7 @@ class Home : AppCompatActivity() {
             intent.removeExtra("login")
             intent.removeExtra("email")
             intent.removeExtra("password")
+            intent.removeExtra("score")
             intent.removeExtra("messageStatus")
 
             goTo(Intent(this, Login::class.java))
@@ -76,29 +77,6 @@ class Home : AppCompatActivity() {
         activity.putExtra("picture", picture)
         activity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
         startActivity(activity)
-    }
-
-    var lastBack:Long = 0L
-
-    override fun onBackPressed() {
-        if (System.currentTimeMillis() - lastBack > 2000) {
-            Toast.makeText(this, getString(R.string.pressBackToFinish), Toast.LENGTH_SHORT).show()
-            lastBack = System.currentTimeMillis()
-        }
-        else {
-            val settings = getSharedPreferences("app-alert", Context.MODE_PRIVATE)
-            settings.edit().clear().commit()
-
-            intent.removeExtra("idUser")
-            intent.removeExtra("level")
-            intent.removeExtra("name")
-            intent.removeExtra("login")
-            intent.removeExtra("email")
-            intent.removeExtra("password")
-            intent.removeExtra("messageStatus")
-
-            goTo(Intent(this, Login::class.java))
-        }
     }
 }
 

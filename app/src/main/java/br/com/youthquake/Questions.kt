@@ -29,11 +29,12 @@ class Questions : AppCompatActivity() {
     private val delayAfterCheckPoints = Handler()
     private val animation = AlphaAnimation(0.2f, 1.0f)
 
-    private var idUser:Long = 0
-    private var level:Int = 0
-    private var picture:Int = 0
-    private var score:Int = 0
-    private var name:String? = null
+    var idUser:Long = 0
+    var level:Int = 0
+    var picture:Int = 0
+    var score:Int = 0
+    var name:String = ""
+    var scoreOnQuizz:Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,7 +45,6 @@ class Questions : AppCompatActivity() {
         picture = intent.getIntExtra("picture", R.mipmap.dracula)
         score = intent.getIntExtra("score", 0)
         name = intent.getStringExtra("name")
-
 
         imgArrow.setOnClickListener{
             goTo(Intent(this, Home::class.java))
@@ -73,7 +73,7 @@ class Questions : AppCompatActivity() {
 
     private fun fillQuestion(): Question? {
         val fillQuestion = FillQuestions()
-        val modelQuestion:Question? = fillQuestion.execute((0..totalQuestions).shuffled().last().toInt()).get()
+        val modelQuestion:Question? = fillQuestion.execute((0..8).shuffled().last().toInt()).get()
 
         modelQuestion?.idQuestion
         modelQuestion?.question
@@ -116,14 +116,7 @@ class Questions : AppCompatActivity() {
             counter++
 
         } else {
-            val actResult = Intent(this, FeedbackQuizz::class.java)
-            actResult.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            actResult.putExtra("idUser", intent.getLongExtra("idUser", 0))
-            actResult.putExtra("score", score)
-            actResult.putExtra("wrong", wrong)
-            actResult.putExtra("right", right)
-
-            startActivity(actResult)
+            goTo(Intent(this, FeedbackQuizz::class.java))
         }
     }
 
@@ -133,7 +126,7 @@ class Questions : AppCompatActivity() {
 
         if (answer == currentQuestion?.rightAnswer) {
             radioSelected.setTextColor(getColor(R.color.colorPrimaryDark))
-            score++
+            scoreOnQuizz++
             right++
         }else{
             radioSelected.setTextColor(getColor(R.color.colorWrong))
@@ -157,6 +150,10 @@ class Questions : AppCompatActivity() {
         activity.putExtra("idUser", idUser)
         activity.putExtra("score", score)
         activity.putExtra("level", level)
+        activity.putExtra("right", right)
+        activity.putExtra("wrong", wrong)
+        activity.putExtra("scoreOnQuizz", scoreOnQuizz)
+
         activity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
         startActivity(activity)
     }

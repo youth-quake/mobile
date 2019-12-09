@@ -12,7 +12,7 @@ class Quizz : AppCompatActivity() {
     var level:Int = 0
     var picture:Int = 0
     var score:Int = 0
-    private var name:String? = null
+    var name:String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,10 +35,7 @@ class Quizz : AppCompatActivity() {
 
             it.startAnimation(animation)
 
-            val actQuestions = Intent(this, Questions::class.java)
-            actQuestions.putExtra("idUser", idUser)
-            actQuestions.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            startActivity(actQuestions)
+            goTo(Intent(this, Questions::class.java))
         }
     }
 
