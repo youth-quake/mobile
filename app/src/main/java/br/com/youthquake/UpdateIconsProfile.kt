@@ -65,10 +65,12 @@ class UpdateIconsProfile : AppCompatActivity() {
             Icons.FLOAT.icon,
             Icons.BIRD.icon,
             Icons.AKALI.icon,
+            Icons.BASKETPLAYER.icon,
             Icons.ALESSANDRA.icon,
             Icons.DRACULA.icon,
             Icons.FLAMINGO.icon,
             Icons.GHOST.icon,
+            Icons.COIN.icon,
             Icons.GINGERBREAD.icon,
             Icons.PRIDE.icon,
             Icons.CHICK.icon,
@@ -84,9 +86,8 @@ class UpdateIconsProfile : AppCompatActivity() {
             Icons.HUSKY.icon,
             Icons.PACMAN.icon,
             Icons.BASKETBALL.icon,
-            Icons.BASKETPLAYER.icon,
-            Icons.HUSKY.icon
-        ), frame)
+            Icons.ALGORITHM.icon
+            ), frame)
 
         scroll.addView(frame, ltParams)
     }
