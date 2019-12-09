@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.activity_feedback_quizz.*
 
 class FeedbackQuizz : AppCompatActivity() {
 
-    private val valuePerPoint = 2
+    private val valuePerPoint = 10
     private var userUpdated: User? = null
 
     private var totalScore:Int = 0
