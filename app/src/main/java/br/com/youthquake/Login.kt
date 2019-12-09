@@ -111,8 +111,6 @@ class Login : AppCompatActivity() {
             Intent(this, FirstSteps::class.java)
         }
 
-        clearData()
-
         intent.putExtra("idUser", idUser)
         intent.putExtra("name",  name)
         intent.putExtra("login", login)

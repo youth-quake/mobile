@@ -24,5 +24,7 @@ enum class Icons(val icon:Icon) {
     SKELETON(Icon(19, 1800, R.mipmap.skeleton, R.mipmap.disabled)),
     SOCCER(Icon(20, 1900, R.mipmap.soccer, R.mipmap.disabled)),
     TURTLE(Icon(21, 2000, R.mipmap.turtle, R.mipmap.disabled)),
-    FLOAT(Icon(22, 2100, R.mipmap.volpe, R.mipmap.disabled))
+    FLOAT(Icon(22, 2100, R.mipmap.volpe, R.mipmap.disabled)),
+    BASKETBALL(Icon(22, 30000, R.mipmap.basketball, R.mipmap.disabled)),
+    BASKETPLAYER(Icon(22, 30000, R.mipmap.basketplayer, R.mipmap.disabled))
 }

@@ -51,8 +51,8 @@ class UpdateIconsProfile : AppCompatActivity() {
 
         val frame = GridLayout(applicationContext)
 
-        val ltParams = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
-        ltParams.setMargins(50,200,50,0)
+        val ltParams = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT)
+        ltParams.setMargins(50,200,50,5)
 
         frame.layoutParams = ltParams
         frame.orientation = GridLayout.HORIZONTAL
@@ -82,7 +82,10 @@ class UpdateIconsProfile : AppCompatActivity() {
             Icons.GINGERBREAD.icon,
             Icons.SKELETON.icon,
             Icons.HUSKY.icon,
-            Icons.PACMAN.icon
+            Icons.PACMAN.icon,
+            Icons.BASKETBALL.icon,
+            Icons.BASKETPLAYER.icon,
+            Icons.HUSKY.icon
         ), frame)
 
         scroll.addView(frame, ltParams)
@@ -136,16 +139,8 @@ class UpdateIconsProfile : AppCompatActivity() {
     }
 
     private fun createFrameWithImages(totalImagesWithPaths:ArrayList<Icon>, frame:GridLayout):GridLayout {
-
-        val ltParams = LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-        ltParams.width = sizeImage
-        ltParams.height = sizeImage
-
-        var id = 0
-
         totalImagesWithPaths.forEach{img ->
             frame.addView(addImage(img))
-            id++
         }
 
         return  frame
