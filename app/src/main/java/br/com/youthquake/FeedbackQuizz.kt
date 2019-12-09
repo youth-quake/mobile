@@ -44,7 +44,9 @@ class FeedbackQuizz : AppCompatActivity() {
             tvCongratulations.text  = "Parabéns! Você está indo muito bem nos estudos!"
         }
 
-        tvTotalPoints.text = "PONTOS GANHOS: ${totalScore*valuePerPoint}"
+        totalScore *= valuePerPoint
+
+        tvTotalPoints.text = "PONTOS GANHOS: ${totalScore}"
 
         tvWrongPoints.text = "${intent.getIntExtra("wrong", 0)}"
         tvRightPoints.text = "${intent.getIntExtra("right", 0)}"
