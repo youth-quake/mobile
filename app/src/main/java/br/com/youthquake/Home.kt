@@ -21,6 +21,7 @@ class Home : AppCompatActivity() {
     var level:Int = 0
     var picture:Int = 0
     var score:Int = 0
+    var name:String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +31,7 @@ class Home : AppCompatActivity() {
         idUser = intent.getLongExtra("idUser", 0)
         picture = intent.getIntExtra("picture", R.mipmap.dracula)
         score = intent.getIntExtra("score", 0)
+        name = intent.getStringExtra("name")
 
         tvName.text = intent.getStringExtra("name")
         tvLevel.text = getString(R.string.levelUser, level)
@@ -60,6 +62,7 @@ class Home : AppCompatActivity() {
             intent.removeExtra("login")
             intent.removeExtra("email")
             intent.removeExtra("password")
+            intent.removeExtra("score")
             intent.removeExtra("messageStatus")
 
             goTo(Intent(this, Login::class.java))
@@ -67,24 +70,13 @@ class Home : AppCompatActivity() {
     }
 
     private fun goTo(activity: Intent){
+        activity.putExtra("name", name)
         activity.putExtra("idUser", idUser)
         activity.putExtra("level", level)
         activity.putExtra("score", score)
         activity.putExtra("picture", picture)
         activity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
         startActivity(activity)
-    }
-
-    var lastBack:Long = 0L
-
-    override fun onBackPressed() {
-        if (System.currentTimeMillis() - lastBack > 2000) {
-            Toast.makeText(this, getString(R.string.pressBackToFinish), Toast.LENGTH_SHORT).show()
-            lastBack = System.currentTimeMillis()
-        }
-        else {
-            finishAffinity()
-        }
     }
 }
 

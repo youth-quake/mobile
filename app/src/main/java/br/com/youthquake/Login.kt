@@ -5,20 +5,28 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import br.com.youthquake.config.UserAuthenticate
-import br.com.youthquake.model.Photos
 import br.com.youthquake.model.User
 import kotlinx.android.synthetic.main.activity_login.*
+import android.view.animation.AlphaAnimation
 
 class Login : AppCompatActivity() {
 
-    var preferences : SharedPreferences? = null
-    var editPreferences : SharedPreferences.Editor? = null
+    private var preferences : SharedPreferences? = null
+    private var editPreferences : SharedPreferences.Editor? = null
+
+    private val animation = AlphaAnimation(0.2f, 1.0f)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+
+        imgBack.setOnClickListener{
+            goTo(Intent(this, MainActivity::class.java))
+        }
 
         preferences = getSharedPreferences("app-alert", Context.MODE_PRIVATE)
         editPreferences = preferences?.edit()
@@ -38,6 +46,14 @@ class Login : AppCompatActivity() {
         }
 
         btLogin.setOnClickListener{
+
+            animation.duration = 1000
+            it.startAnimation(animation)
+
+            val anim = AnimationUtils.loadAnimation(this, R.anim.button_animation)
+            btLogin.animation = anim
+            btLogin.startAnimation(anim)
+
             val user = User()
             user.login = etUsername.text.toString()
             user.password = etPassword.text.toString()
@@ -104,5 +120,14 @@ class Login : AppCompatActivity() {
 
     private fun rejectedAccess(){
         Toast.makeText(this, getString(R.string.rejectedAccess), Toast.LENGTH_LONG).show()
+    }
+
+    private fun goTo(activity:Intent){
+        activity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+        startActivity(activity)
+    }
+
+    override fun onBackPressed() {
+        goTo(Intent(this, MainActivity::class.java))
     }
 }

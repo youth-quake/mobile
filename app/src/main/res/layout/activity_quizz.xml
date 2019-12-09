@@ -5,25 +5,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Quizz"
-    android:background="@mipmap/bglines">
+    android:background="@color/colorPrimary"
+    android:paddingTop="20dp"
+    android:paddingBottom="50dp">
 
     <ImageView
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintRight_toLeftOf="parent"
-        android:src="@mipmap/logo"
-        android:id="@+id/logo"
-        tools:ignore="MissingConstraints" />
+        android:id="@+id/imgBack"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
+        android:src="@mipmap/backarrow"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
-        style="@style/font"
+        style="@style/titleWhiteQuizz"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Acerte as questões e ganhe pontos!"
+        android:layout_marginTop="10dp"
+        android:text="Hora de testar seus conhecimentos!"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logo" />
+        app:layout_constraintTop_toBottomOf="@id/imgBack"
+        android:padding="20dp"/>
+
+    <TextView
+        style="@style/subtitleWhiteQuizz"
+        android:textColor="@color/whiteTheme"
+        android:id="@+id/subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Topa o desafio de responder nosso quiz? :D"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+
+    <ImageView
+        android:layout_width="190dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        android:src="@mipmap/quiz"
+        android:id="@+id/logo"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@id/subtitle" />
+
 
     <Button
         android:id="@+id/startButton"
@@ -31,8 +61,8 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="250dp"
-        android:text="Começar"
+        android:layout_marginTop="50dp"
+        android:text="Manda ver!"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logo" />
