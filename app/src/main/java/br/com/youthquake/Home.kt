@@ -21,6 +21,7 @@ class Home : AppCompatActivity() {
     var level:Int = 0
     var picture:Int = 0
     var score:Int = 0
+    var name:String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +31,7 @@ class Home : AppCompatActivity() {
         idUser = intent.getLongExtra("idUser", 0)
         picture = intent.getIntExtra("picture", R.mipmap.dracula)
         score = intent.getIntExtra("score", 0)
+        name = intent.getStringExtra("name")
 
         tvName.text = intent.getStringExtra("name")
         tvLevel.text = getString(R.string.levelUser, level)
@@ -67,6 +69,7 @@ class Home : AppCompatActivity() {
     }
 
     private fun goTo(activity: Intent){
+        activity.putExtra("name", name)
         activity.putExtra("idUser", idUser)
         activity.putExtra("level", level)
         activity.putExtra("score", score)

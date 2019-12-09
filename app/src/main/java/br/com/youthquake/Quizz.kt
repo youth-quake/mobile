@@ -12,6 +12,7 @@ class Quizz : AppCompatActivity() {
     var level:Int = 0
     var picture:Int = 0
     var score:Int = 0
+    private var name:String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +22,7 @@ class Quizz : AppCompatActivity() {
         idUser = intent.getLongExtra("idUser", 0)
         picture = intent.getIntExtra("picture", R.mipmap.dracula)
         score = intent.getIntExtra("score", 0)
+        name = intent.getStringExtra("name")
 
         imgBack.setOnClickListener{
             goTo(Intent(this, Home::class.java))
@@ -41,6 +43,7 @@ class Quizz : AppCompatActivity() {
     }
 
     private fun goTo(activity:Intent){
+        activity.putExtra("name", name)
         activity.putExtra("picture",picture)
         activity.putExtra("idUser", idUser)
         activity.putExtra("score", score)

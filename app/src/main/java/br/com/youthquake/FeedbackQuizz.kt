@@ -32,13 +32,10 @@ class FeedbackQuizz : AppCompatActivity() {
         tvWrongPoints.text = "${intent.getIntExtra("wrong", 0)}"
         tvRightPoints.text = "${intent.getIntExtra("right", 0)}"
 
-        when{
-            (totalScore < 3) -> {
-                tvCongratulations.text = "Você está no caminho, mas precisa estudar mais!"
-            }
-            (totalScore >= 3) -> {
-                tvCongratulations.text = "Parabéns! Você está indo muito bem nos estudos!"
-            }
+        if(totalScore <= 2){
+            tvCongratulations.text = "Você está no caminho, mas precisa estudar mais!"
+        }else{
+            "Parabéns! Você está indo muito bem nos estudos!"
         }
 
         btGame.setOnClickListener{
@@ -63,7 +60,7 @@ class FeedbackQuizz : AppCompatActivity() {
 
         activity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
 
-        activity.putExtra("level", userUpdated?.level)
+        activity.putExtra("name", userUpdated?.level)
         activity.putExtra("score", userUpdated?.score)
         activity.putExtra("idUser", userUpdated?.idUser)
         activity.putExtra("picture", userUpdated?.picture!!.toInt())

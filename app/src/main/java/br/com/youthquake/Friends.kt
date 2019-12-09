@@ -11,6 +11,7 @@ class Friends : AppCompatActivity() {
     var level:Int = 0
     var picture:Int = 0
     var score:Int = 0
+    var name:String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +21,7 @@ class Friends : AppCompatActivity() {
         idUser = intent.getLongExtra("idUser", 0)
         picture = intent.getIntExtra("picture", R.mipmap.dracula)
         score = intent.getIntExtra("score", 0)
+        name = intent.getStringExtra("name")
 
         imgArrow.setOnClickListener{
             goTo(Intent(this, Home::class.java))
@@ -27,6 +29,7 @@ class Friends : AppCompatActivity() {
     }
 
     private fun goTo(activity:Intent){
+        activity.putExtra("name",name)
         activity.putExtra("picture",picture)
         activity.putExtra("idUser", idUser)
         activity.putExtra("score", score)

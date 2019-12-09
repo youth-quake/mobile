@@ -23,19 +23,34 @@ class Questions : AppCompatActivity() {
 
     private var countTotal: Int = 5
 
-    private var score: Int = 0
     private var wrong: Int = 0
     private var right: Int = 0
 
     private val delayAfterCheckPoints = Handler()
     private val animation = AlphaAnimation(0.2f, 1.0f)
 
+    private var idUser:Long = 0
+    private var level:Int = 0
+    private var picture:Int = 0
+    private var score:Int = 0
+    private var name:String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_questions)
 
-        txtCountQuestions.text = "Questão $counter/$countTotal"
+        level = intent.getIntExtra("level", 1)
+        idUser = intent.getLongExtra("idUser", 0)
+        picture = intent.getIntExtra("picture", R.mipmap.dracula)
+        score = intent.getIntExtra("score", 0)
+        name = intent.getStringExtra("name")
 
+
+        imgArrow.setOnClickListener{
+            goTo(Intent(this, Home::class.java))
+        }
+
+        txtCountQuestions.text = "Questão $counter/$countTotal"
 
         currentQuestion = fillQuestion()
         showQuestion()
@@ -53,15 +68,6 @@ class Questions : AppCompatActivity() {
                 checkPoints()
                 delayAfterCheckPoints.postDelayed({ showQuestion() }, 1000)
             }
-        }
-
-        imgArrow.setOnClickListener{
-            animation.duration = 1000
-            it.startAnimation(animation)
-
-            val actHome = Intent(this, Home::class.java)
-            actHome.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            startActivity(actHome)
         }
     }
 
@@ -145,17 +151,13 @@ class Questions : AppCompatActivity() {
         return false
     }
 
-    var lastBack:Long = 0L
-
-    override fun onBackPressed() {
-        if (System.currentTimeMillis() - lastBack > 2000) {
-            Toast.makeText(this, getString(R.string.pressBackToFinish), Toast.LENGTH_SHORT).show()
-            lastBack = System.currentTimeMillis()
-        }
-        else {
-            val goHome = Intent(this, FirstSteps::class.java)
-            goHome.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-            startActivity(goHome)
-        }
+    private fun goTo(activity:Intent){
+        activity.putExtra("name", name)
+        activity.putExtra("picture",picture)
+        activity.putExtra("idUser", idUser)
+        activity.putExtra("score", score)
+        activity.putExtra("level", level)
+        activity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+        startActivity(activity)
     }
 }

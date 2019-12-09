@@ -114,6 +114,7 @@ class UpdateIconsProfile : AppCompatActivity() {
     }
 
     private fun goTo(activity: Intent){
+        activity.putExtra("name", userUpdated?.name)
         activity.putExtra("level", userUpdated?.level)
         activity.putExtra("score", userUpdated?.score)
         activity.putExtra("idUser", userUpdated?.idUser)
