@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import android.view.animation.AlphaAnimation
 import android.widget.*
 import br.com.youthquake.config.FillQuestions
 import br.com.youthquake.model.Question
@@ -27,6 +28,7 @@ class Questions : AppCompatActivity() {
     private var right: Int = 0
 
     private val delayAfterCheckPoints = Handler()
+    private val animation = AlphaAnimation(0.2f, 1.0f)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +43,10 @@ class Questions : AppCompatActivity() {
         if(answerIsChecked()) checkPoints()
 
         submitButton.setOnClickListener {
+
+            animation.duration = 1000
+            it.startAnimation(animation)
+
             if(!answerIsChecked()){
                 Toast.makeText(this, "Você precisa selecionar uma opção", Toast.LENGTH_SHORT).show()
             }else{
@@ -50,6 +56,9 @@ class Questions : AppCompatActivity() {
         }
 
         imgArrow.setOnClickListener{
+            animation.duration = 1000
+            it.startAnimation(animation)
+
             val actHome = Intent(this, Home::class.java)
             actHome.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(actHome)
@@ -117,11 +126,11 @@ class Questions : AppCompatActivity() {
         val answer = radioSelected.text.toString()
 
         if (answer == currentQuestion?.rightAnswer) {
-            radioSelected.setTextColor(Color.GREEN)
+            radioSelected.setTextColor(getColor(R.color.colorPrimaryDark))
             score++
             right++
         }else{
-            radioSelected.setTextColor(Color.RED)
+            radioSelected.setTextColor(getColor(R.color.colorWrong))
             wrong++
         }
 

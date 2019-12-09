@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.Gravity
 import android.view.ViewGroup
+import android.view.animation.AlphaAnimation
 import android.widget.GridLayout
 import android.widget.ImageView
 import android.widget.LinearLayout.LayoutParams
@@ -22,6 +23,8 @@ class UpdateIconsProfile : AppCompatActivity() {
 
     private val marginPerComponent = 25
     private val sizeImage = 150
+
+    private val animation = AlphaAnimation(0.2f, 1.0f)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -79,7 +82,10 @@ class UpdateIconsProfile : AppCompatActivity() {
         image.id = id
 
         image.setOnClickListener{
-            image.setBorderColor(Color.GREEN)
+            animation.duration = 1000
+            it.startAnimation(animation)
+
+            image.setBorderColor(R.color.colorPrimaryDark)
 
             val updateScore = UserUpdate()
             val user = User()

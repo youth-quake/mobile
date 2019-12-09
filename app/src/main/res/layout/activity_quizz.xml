@@ -5,25 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Quizz"
-    android:background="@mipmap/bglines">
+    android:background="@color/colorPrimary"
+    android:paddingTop="50dp"
+    android:paddingBottom="50dp">
+
+    <TextView
+        style="@style/titleWhiteQuizz"
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hora de testar seus conhecimentos!"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="20dp"/>
+
+    <TextView
+        style="@style/subtitleWhiteQuizz"
+        android:textColor="@color/whiteTheme"
+        android:id="@+id/subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Topa o desafio de responder nosso quiz? :D"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
 
     <ImageView
         android:layout_width="300dp"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
-        android:src="@mipmap/logo"
+        android:src="@mipmap/hat"
         android:id="@+id/logo"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        app:layout_constraintTop_toBottomOf="@id/subtitle" />
 
-    <TextView
-        style="@style/font"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Acerte as questões e ganhe pontos!"
-        app:layout_constraintLeft_toRightOf="parent"
-        app:layout_constraintRight_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logo" />
 
     <Button
         android:id="@+id/startButton"
@@ -31,8 +49,8 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="250dp"
-        android:text="Começar"
+        android:layout_marginTop="100dp"
+        android:text="Manda ver!"
         app:layout_constraintLeft_toRightOf="parent"
         app:layout_constraintRight_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logo" />

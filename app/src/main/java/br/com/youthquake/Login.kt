@@ -5,16 +5,28 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import br.com.youthquake.config.UserAuthenticate
-import br.com.youthquake.model.Photos
 import br.com.youthquake.model.User
 import kotlinx.android.synthetic.main.activity_login.*
+import android.graphics.drawable.TransitionDrawable
+import android.os.Handler
+import android.transition.Transition
+import android.view.animation.AlphaAnimation
+import androidx.core.app.ComponentActivity
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+
+
 
 class Login : AppCompatActivity() {
 
-    var preferences : SharedPreferences? = null
-    var editPreferences : SharedPreferences.Editor? = null
+    private var preferences : SharedPreferences? = null
+    private var editPreferences : SharedPreferences.Editor? = null
+
+    private val animation = AlphaAnimation(0.2f, 1.0f)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +50,14 @@ class Login : AppCompatActivity() {
         }
 
         btLogin.setOnClickListener{
+
+            animation.duration = 1000
+            it.startAnimation(animation)
+
+            val anim = AnimationUtils.loadAnimation(this, R.anim.button_animation)
+            btLogin.animation = anim
+            btLogin.startAnimation(anim)
+
             val user = User()
             user.login = etUsername.text.toString()
             user.password = etPassword.text.toString()
