@@ -18,6 +18,10 @@ class Register : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
+        imgBack.setOnClickListener{
+            goTo(Intent(this, MainActivity::class.java))
+        }
+
         btCadastrar.setOnClickListener{
 
             animation.duration = 1000
@@ -33,6 +37,17 @@ class Register : AppCompatActivity() {
             call.execute(user)
 
             Toast.makeText(this, getString(R.string.registeredSuccessfully), Toast.LENGTH_SHORT).show()
+
+            goTo(Intent(this, Home::class.java))
         }
+    }
+
+    private fun goTo(activity:Intent){
+        activity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+        startActivity(activity)
+    }
+
+    override fun onBackPressed() {
+        goTo(Intent(this, MainActivity::class.java))
     }
 }

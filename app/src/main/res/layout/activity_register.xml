@@ -8,12 +8,14 @@
     tools:context=".Register">
 
     <ImageView
-        android:id="@+id/imgArrow"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:paddingLeft="10dp"
-        android:paddingTop="15dp"
-        android:src="@mipmap/arrow" />
+        android:id="@+id/imgBack"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/backarrow"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
         android:layout_width="wrap_content"

@@ -3,6 +3,7 @@ package br.com.youthquake
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.animation.AlphaAnimation
 import br.com.youthquake.config.UserUpdate
 import br.com.youthquake.model.User
 import kotlinx.android.synthetic.main.activity_feedback_quizz.*
@@ -15,23 +16,38 @@ class FeedbackQuizz : AppCompatActivity() {
     private var totalScore:Int = 0
     private var idUser:Long = 0
 
+    private val animation = AlphaAnimation(0.2f, 1.0f)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feedback_quizz)
 
+        animation.duration = 400
+
         idUser = intent.getLongExtra("idUser", 0)
         totalScore = intent.getIntExtra("score", 0)*valuePerPoint
 
-        tvTotalPoints.text = "SEUS PONTOS: ${totalScore}"
+        tvTotalPoints.text = "PONTOS GANHOS: ${totalScore}"
 
         tvWrongPoints.text = "${intent.getIntExtra("wrong", 0)}"
         tvRightPoints.text = "${intent.getIntExtra("right", 0)}"
 
+        when{
+            (totalScore < 3) -> {
+                tvCongratulations.text = "Você está no caminho, mas precisa estudar mais!"
+            }
+            (totalScore >= 3) -> {
+                tvCongratulations.text = "Parabéns! Você está indo muito bem nos estudos!"
+            }
+        }
+
         btGame.setOnClickListener{
+            it.animation = animation
             updateScore(Intent(this, Quizz::class.java))
         }
 
         btExit.setOnClickListener{
+            it.animation = animation
             updateScore(Intent(this, Home::class.java))
         }
     }

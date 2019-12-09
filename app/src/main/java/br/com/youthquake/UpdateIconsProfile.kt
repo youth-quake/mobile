@@ -24,8 +24,6 @@ class UpdateIconsProfile : AppCompatActivity() {
     private val marginPerComponent = 25
     private val sizeImage = 150
 
-    private val animation = AlphaAnimation(0.2f, 1.0f)
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_icons_profile)
@@ -82,10 +80,8 @@ class UpdateIconsProfile : AppCompatActivity() {
         image.id = id
 
         image.setOnClickListener{
-            animation.duration = 1000
-            it.startAnimation(animation)
 
-            image.setBorderColor(R.color.colorPrimaryDark)
+            image.setBorderColor(Color.GREEN)
 
             val updateScore = UserUpdate()
             val user = User()
@@ -95,7 +91,7 @@ class UpdateIconsProfile : AppCompatActivity() {
 
             userUpdated = updateScore.execute(user).get()
 
-            delayAfterClickImage.postDelayed({ goTo(Intent(this, Home::class.java)) }, 1000)
+            delayAfterClickImage.postDelayed({ goTo(Intent(this, Home::class.java)) }, 300)
         }
 
         return image

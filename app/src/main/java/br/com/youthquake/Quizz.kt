@@ -8,11 +8,23 @@ import kotlinx.android.synthetic.main.activity_quizz.*
 
 class Quizz : AppCompatActivity() {
 
+    var idUser:Long = 0
+    var level:Int = 0
+    var picture:Int = 0
+    var score:Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quizz)
 
-        val idUser = intent.getLongExtra("idUser", 0)
+        level = intent.getIntExtra("level", 1)
+        idUser = intent.getLongExtra("idUser", 0)
+        picture = intent.getIntExtra("picture", R.mipmap.dracula)
+        score = intent.getIntExtra("score", 0)
+
+        imgBack.setOnClickListener{
+            goTo(Intent(this, Home::class.java))
+        }
 
         startButton.setOnClickListener {
 
@@ -26,5 +38,14 @@ class Quizz : AppCompatActivity() {
             actQuestions.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(actQuestions)
         }
+    }
+
+    private fun goTo(activity:Intent){
+        activity.putExtra("picture",picture)
+        activity.putExtra("idUser", idUser)
+        activity.putExtra("score", score)
+        activity.putExtra("level", level)
+        activity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+        startActivity(activity)
     }
 }

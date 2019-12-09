@@ -53,7 +53,7 @@
     <string name="pressBackToFinish">Clique novamente para sair</string>
 
     <!--Home menu-->
-    <string name="goToGame">Quizz</string>
+    <string name="goToGame">Quiz</string>
     <string name="goToRanking">Ranking</string>
     <string name="goToLogin">Sair</string>
     <string name="allReserved">Todos os Direitos Reservados © 2019</string>

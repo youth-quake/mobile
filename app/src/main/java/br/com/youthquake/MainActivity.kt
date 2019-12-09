@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         btCriarConta.setOnClickListener {
 
-            animation.duration = 1000
+            animation.duration = 400
             it.startAnimation(animation)
 
             val register = Intent(this, Register::class.java)

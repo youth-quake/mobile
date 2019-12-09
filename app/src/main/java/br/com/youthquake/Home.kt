@@ -83,7 +83,18 @@ class Home : AppCompatActivity() {
             lastBack = System.currentTimeMillis()
         }
         else {
-            finishAffinity()
+            val settings = getSharedPreferences("app-alert", Context.MODE_PRIVATE)
+            settings.edit().clear().commit()
+
+            intent.removeExtra("idUser")
+            intent.removeExtra("level")
+            intent.removeExtra("name")
+            intent.removeExtra("login")
+            intent.removeExtra("email")
+            intent.removeExtra("password")
+            intent.removeExtra("messageStatus")
+
+            goTo(Intent(this, Login::class.java))
         }
     }
 }

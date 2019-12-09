@@ -10,16 +10,7 @@ import android.widget.Toast
 import br.com.youthquake.config.UserAuthenticate
 import br.com.youthquake.model.User
 import kotlinx.android.synthetic.main.activity_login.*
-import android.graphics.drawable.TransitionDrawable
-import android.os.Handler
-import android.transition.Transition
 import android.view.animation.AlphaAnimation
-import androidx.core.app.ComponentActivity
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-
-
 
 class Login : AppCompatActivity() {
 
@@ -31,6 +22,11 @@ class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+
+        imgBack.setOnClickListener{
+            goTo(Intent(this, MainActivity::class.java))
+        }
 
         preferences = getSharedPreferences("app-alert", Context.MODE_PRIVATE)
         editPreferences = preferences?.edit()
@@ -124,5 +120,14 @@ class Login : AppCompatActivity() {
 
     private fun rejectedAccess(){
         Toast.makeText(this, getString(R.string.rejectedAccess), Toast.LENGTH_LONG).show()
+    }
+
+    private fun goTo(activity:Intent){
+        activity.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+        startActivity(activity)
+    }
+
+    override fun onBackPressed() {
+        goTo(Intent(this, MainActivity::class.java))
     }
 }
