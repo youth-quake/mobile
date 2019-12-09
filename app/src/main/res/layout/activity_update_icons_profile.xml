@@ -34,4 +34,10 @@
         style="@style/titleHome"
         app:layout_constraintTop_toBottomOf="parent"/>
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scroll">
+
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

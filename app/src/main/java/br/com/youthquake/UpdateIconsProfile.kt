@@ -17,6 +17,8 @@ import br.com.youthquake.model.Icons
 import br.com.youthquake.model.User
 import com.github.siyamed.shapeimageview.CircularImageView
 import kotlinx.android.synthetic.main.activity_friends.*
+import kotlinx.android.synthetic.main.activity_friends.imgArrow
+import kotlinx.android.synthetic.main.activity_update_icons_profile.*
 
 class UpdateIconsProfile : AppCompatActivity() {
 
@@ -75,10 +77,15 @@ class UpdateIconsProfile : AppCompatActivity() {
             Icons.SOCCER.icon,
             Icons.APPLE.icon,
             Icons.ACCOUSTIC.icon,
-            Icons.TURTLE.icon
+            Icons.TURTLE.icon,
+            Icons.GUITAR.icon,
+            Icons.GINGERBREAD.icon,
+            Icons.SKELETON.icon,
+            Icons.HUSKY.icon,
+            Icons.PACMAN.icon
         ), frame)
 
-        addContentView(frame, ltParams)
+        scroll.addView(frame, ltParams)
     }
 
     private fun addImage(img:Icon) : ImageView{
